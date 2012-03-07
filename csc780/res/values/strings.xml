@@ -2,6 +2,36 @@
 <resources>
 
     <string name="hello">Hello World, Csc780Activity!</string>
-    <string name="app_name">Csc780</string>
+    <string name="app_name">Vital Signs Tracker</string>
+    
+    <!-- Strings for LoginPage.java -->
+    <string name="titleText">Vital Signs Tracker</string>
+    <string name="signIn">Sign-In</string>
+    <string name="username">Username</string>
+    <string name="usernameHint">Type your username here</string>
+    <string name="password">Password</string>
+    <string name="passwordHint">Type your password here</string>
+    <string name="forget">Forget Password?</string>
+    <string name="join">New? Join Today</string>
+    <string name="okButton">OK</string>
+    <string name="resetButton">Reset</string>
 
+    
+    <!-- Strings for ErrorSignIn.java -->
+    <string name="errorSignInTitle">Unable to Sign-In</string>
+    <string name="errorSignInMessage">
+        We are unable to verify your username and password.
+        Please re-enter the correct username and password.
+    </string>
+    
+    <!-- Strings for UserInformation.java -->
+    <string name="uiTitle">User Information</string>
+    <string name="uifName">First Name</string>
+    <string name="uilName">Last Name</string>
+    <string name="firstnameHint">Type your first name</string>
+    <string name="lastnameHint">Type your last name</string>
+    <string name="email">E-mail</string>
+    <string name="emailHint">Type your e-mail</string>
+    <string name="phone">Phone Number</string>
+    <string name="phoneHint">Type your phone number</string>
 </resources>
