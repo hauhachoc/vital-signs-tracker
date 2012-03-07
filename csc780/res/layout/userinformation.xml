@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#90006400"
+    android:padding="20dp" >
+    
+    <TextView
+        android:id="@+id/uiTitle"
+        android:textSize="18dp"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:text="@string/uiTitle" />          
+    <TextView 
+        android:id="@+id/uifirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/uifName"
+        android:layout_below="@+id/uiTitle"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14dp" 
+        />
+    <EditText
+        android:id="@+id/uifirstnameField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/uifirstName"
+        android:layout_marginBottom="6dp"
+        android:hint="@string/firstnameHint" />
+    
+    <TextView 
+        android:id="@+id/uilastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/uilName"
+        android:layout_below="@+id/uifirstnameField"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14dp"  
+        />
+    <EditText
+        android:id="@+id/uilastnameField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/uilastName"
+        android:layout_marginBottom="6dp"
+        android:hint="@string/lastnameHint" />
+    
+    <TextView 
+        android:id="@+id/uiemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:layout_below="@+id/uilastnameField"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14dp"  
+        />
+    <EditText
+        android:id="@+id/uiemailField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/uiemail"
+        android:layout_marginBottom="6dp"
+        android:hint="@string/emailHint" />
+    
+	<TextView 
+        android:id="@+id/uiphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone"
+        android:layout_below="@+id/uiemailField"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14dp"  
+        />
+    <EditText
+        android:id="@+id/uiphoneField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/uiphone"
+        android:layout_marginBottom="6dp"
+        android:hint="@string/phoneHint"
+        android:inputType="phone" />
+    
+    <TextView 
+        android:id="@+id/uiPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:layout_below="@+id/uiphoneField"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14dp"  
+        />
+    <EditText
+        android:id="@+id/uiPasswordField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/uiPassword"
+        android:layout_marginBottom="15dp"
+        android:hint="@string/passwordHint"
+        android:password="true" />
+	<Button
+        android:id="@+id/uiOKButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/uiPasswordField"        
+        android:layout_marginLeft="10dp"
+        android:text="@string/okButton"
+        android:onClick="uiOkClick" />
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/uiPasswordField"
+        android:layout_marginRight="10dp"
+        android:onClick="uiResetClick"
+        android:text="@string/resetButton" />    
+
+</RelativeLayout>
