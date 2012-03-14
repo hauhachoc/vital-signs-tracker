@@ -17,12 +17,8 @@
     <string name="resetButton">Reset</string>
 
     
-    <!-- Strings for ErrorSignIn.java -->
-    <string name="errorSignInTitle">Unable to Sign-In</string>
-    <string name="errorSignInMessage">
-        We are unable to verify your username and password.
-        Please re-enter the correct username and password.
-    </string>
+    <!-- Strings for ForgetPassword.java -->
+    <string name="forgetPasswordTitle">Retrieve Password</string>    
     
     <!-- Strings for UserInformation.java -->
     <string name="uiTitle">User Information</string>
@@ -34,4 +30,33 @@
     <string name="emailHint">Type your e-mail</string>
     <string name="phone">Phone Number</string>
     <string name="phoneHint">Type your phone number</string>
+    
+    <!-- Strings for MainLobby.java -->
+    <string name="mainlobbytitle">Main Lobby</string>
+    <string name="mainlobby1">Modify Information and Settings</string>
+    <string name="editUserInfo1">Edit User Information</string>
+    <string name="editUserInfo2">Edit Name, Email, and Phone Number</string>
+    <string name="editProvider1">Edit Health Care Information</string>
+    <string name="editProvider2">Edit Name, Email, and Phone Number</string>
+    <string name="editApp1">Edit Application Settings</string>
+    <string name="editApp2">Edit Chart, Table, and Remainder</string>
+    
+    <string name="mainlobby2">Retrieve Data</string>
+    <string name="report1">Generate Report</string>
+    <string name="report2">Display Report</string>
+    <string name="chart1">Generate Chart</string>
+    <string name="chart2">Display Report</string>
+    
+    <string name="mainlobby3">Enter Data</string>
+    <string name="enter1">Enter Data Manually</string>
+    <string name="enter2">Blood Pressure, Body Temp., and Heart Beat</string>
+    
+    <string name="mainlobby4">Exit and Sign-Out</string>
+    <string name="exit1">Sign-Out</string>
+    <string name="exit2">Sign-Out From The Application</string>
+    
+    
+    
 </resources>
+
+

@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/uiTitle" />          
     <TextView 
         android:id="@+id/uifirstName"
@@ -26,9 +26,10 @@
     <EditText
         android:id="@+id/uifirstnameField"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:textSize="12dp"
         android:layout_below="@+id/uifirstName"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="6dp"        
         android:hint="@string/firstnameHint" />
     
     <TextView 
@@ -44,7 +45,8 @@
     <EditText
         android:id="@+id/uilastnameField"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:textSize="12dp"
         android:layout_below="@+id/uilastName"
         android:layout_marginBottom="6dp"
         android:hint="@string/lastnameHint" />
@@ -62,7 +64,8 @@
     <EditText
         android:id="@+id/uiemailField"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:textSize="12dp"
         android:layout_below="@+id/uiemail"
         android:layout_marginBottom="6dp"
         android:hint="@string/emailHint" />
@@ -79,8 +82,9 @@
         />
     <EditText
         android:id="@+id/uiphoneField"
+        android:layout_height="40dp"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:textSize="12dp"        
         android:layout_below="@+id/uiphone"
         android:layout_marginBottom="6dp"
         android:hint="@string/phoneHint"
@@ -99,7 +103,8 @@
     <EditText
         android:id="@+id/uiPasswordField"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:textSize="12dp"
         android:layout_below="@+id/uiPassword"
         android:layout_marginBottom="15dp"
         android:hint="@string/passwordHint"
@@ -112,6 +117,7 @@
         android:layout_below="@+id/uiPasswordField"        
         android:layout_marginLeft="10dp"
         android:text="@string/okButton"
+        android:clickable="true"
         android:onClick="uiOkClick" />
     <Button
         android:id="@+id/resetButton"
@@ -120,6 +126,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/uiPasswordField"
         android:layout_marginRight="10dp"
+        android:clickable="true"
         android:onClick="uiResetClick"
         android:text="@string/resetButton" />    
 
