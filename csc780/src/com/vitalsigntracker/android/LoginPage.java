@@ -17,7 +17,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
-import android.widget.Toast;
 import android.view.View;
 import metadata.Constants;
 
@@ -33,7 +32,7 @@ public class LoginPage extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.patientlogin);
         
         username = (EditText) findViewById(R.id.usernameField);
         password = (EditText) findViewById(R.id.passwordField);
@@ -55,7 +54,8 @@ public class LoginPage extends Activity {
             sock.connect(socketAddress, 10 * 1000);
             inpS = sock.getInputStream();
             outS = sock.getOutputStream();
-            Toast.makeText(this, "BUtton OK Press", Toast.LENGTH_LONG).show();
+            
+            //Toast.makeText(this, "BUtton OK Press", Toast.LENGTH_LONG).show();
            
             Scanner in = new Scanner(inpS);
             PrintWriter out = new PrintWriter(outS, true);
@@ -65,14 +65,14 @@ public class LoginPage extends Activity {
             
             String response = in.nextLine();
 //for debug purpose only
-            Toast.makeText(this, "server response " + response, Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "server response " + response, Toast.LENGTH_LONG).show();
                                     
             inpS.close();
             out.close();
             outS.close();
             sock.close();
             if (response.equals("Success")) {
-            	Intent i = new Intent(this, MainLobby.class);
+            	Intent i = new Intent(this, PatientMainLobby.class);
             	startActivity(i);
             	
 			} else {				
@@ -94,8 +94,7 @@ public class LoginPage extends Activity {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
-        }
-		
+        }		
 	}
     	
     public String prepareJSONString() {
@@ -107,11 +106,6 @@ public class LoginPage extends Activity {
             object.put("email", username.getText());            
             object.put("password", password.getText());        
             str = object.toString();
-            
-//For debug purpose only
-            Toast.makeText(this, "JSON Objects are: " + str, Toast.LENGTH_LONG).show();
-
-            
         } catch (Exception e) {
             e.printStackTrace();  
         }
@@ -129,15 +123,13 @@ public class LoginPage extends Activity {
     
     public void clickForgetPassword(View v) {
     	//Source code here
-    	Intent i = new Intent(this, ForgetPassword.class);
-    	startActivity(i);
-    	
-    	
+    	Intent i = new Intent(this, PatientForgetPassword.class);
+    	startActivity(i);  	    
     }
     
-    public void clickJoin(View v) {
+    public void clickActivate(View v) {
     	//Source code here
-    	Intent j = new Intent(this, Register.class);
+    	Intent j = new Intent(this, Activate.class);
     	startActivity(j);
     	
     }

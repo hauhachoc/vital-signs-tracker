@@ -4,32 +4,79 @@
     <string name="hello">Hello World, Csc780Activity!</string>
     <string name="app_name">Vital Signs Tracker</string>
     
+    <!-- Strings for Welcome.java -->
+    <string name="welcomeQuestion">Sign In as:</string>
+    <string name="patient">Patient</string>
+    <string name="provider">Health Provider</string>
+    
     <!-- Strings for LoginPage.java -->
     <string name="titleText">Vital Signs Tracker</string>
     <string name="signIn">Sign-In</string>
-    <string name="username">Username</string>
+    <string name="signOut">Sign-Out</string>
+    <string name="username">Email</string>
     <string name="usernameHint">Type your username here</string>
     <string name="password">Password</string>
     <string name="passwordHint">Type your password here</string>
     <string name="forget">Forget Password?</string>
-    <string name="join">New? Join Today</string>
-    <string name="okButton">OK</string>
+    <string name="activate">Activate Account</string>
+    <string name="okButton">Sign In</string>
     <string name="resetButton">Reset</string>
+    <string name="register">Register</string>
+    
+    
+    <!-- Strings for ProviderLogin.java -->
+    <string name="providerTitleText">Health Provider Sign In</string>
+    <string name="providerid">Provider ID</string>
+    <string name="provideridHint">Type your provider ID here</string>
+	<string name="uiproviderTitle1">Provider Information (1/2)</string>
+	<string name="uiproviderTitle2">Provider Information (2/2)</string>
+    
+    <string name="nextButton">Next</string>
 
+    <!-- Strings for ProviderMainLobby.java -->
+    <string name="providerMainLobbyTitle">Provider Main Lobby</string>
+    <string name="displayOnePatient">Display One Patient Info.</string>
+    <string name="displayAllPatient">Display All Patient Info.</string>
+    
+    <string name="subscribeButton">Subscribe</string>
+    
+    <string name="patientNameText">Select Patient\'s Name</string>
+    <string name="tablePeriodText">Select Length of Time</string>    
+    
+    <!-- Strings for PresentTable.java -->
+    <string name="presentTableTitle">Patient Report Table</string>
+    <string name="patientNameTextTitle">Patient\'s Name: </string>
+    <string name="tableHeaderText">Date\t\t\t\t\t\tBlood Pressure\t\t\t\tHeart Rate\t\t\tTemperature (F)</string>
+    
+    
     
     <!-- Strings for ForgetPassword.java -->
-    <string name="forgetPasswordTitle">Retrieve Password</string>    
+    <string name="forgetPasswordTitle">Retrieve Password</string>  
+    <string name="forgetPatientName">Patient\'s Name</string>
+    <string name="forgetPatientNameHint">Type your first and last name</string>
+    <string name="forgetEmail">Patient\'s Email</string>
+    <string name="forgetEmailHint">Type your email account</string> 
+    
+    <!-- Strings for ProviderForgetPassword.java -->
+    <string name="forgetProviderId">Provider ID</string>
     
     <!-- Strings for UserInformation.java -->
     <string name="uiTitle">User Information</string>
-    <string name="uifName">First Name</string>
-    <string name="uilName">Last Name</string>
+    <string name="uiPatientName">Patient\'s Name (First and Last Name)</string>
+    <string name="patientNameHint">Type first name followed by last name</string>    
     <string name="firstnameHint">Type your first name</string>
     <string name="lastnameHint">Type your last name</string>
-    <string name="email">E-mail</string>
+    <string name="email">Email</string>
     <string name="emailHint">Type your e-mail</string>
     <string name="phone">Phone Number</string>
     <string name="phoneHint">Type your phone number</string>
+    
+    <string name="uifName">First Name</string>
+    <string name="uilName">Last Name</string>
+    
+    <string name="uiModifyTitle">Modify User Information</string>
+    <string name="uiNotice">You are only allowed to modify email, phone, or password.</string>
+    <string name="optionTextTitle">Click on the one you\'d like to modify</string>
     
     <!-- Strings for MainLobby.java -->
     <string name="mainlobbytitle">Main Lobby</string>
@@ -55,6 +102,11 @@
     <string name="exit1">Sign-Out</string>
     <string name="exit2">Sign-Out From The Application</string>
     
+    <!-- Strings for Activate.java -->
+    <string name="activateTitle">Activate Account</string>
+    <string name="doctorNameTitle">Doctor\'s Last Name</string>
+    <string name="doctorNameHint">Enter Your Doctor\'s Last Name</string>
+    <string name="submitButton">Submit</string>
     
     
 </resources>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 	>
+    
+    <RelativeLayout 
+        android:id="@+id/patientMainLobbyPage"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+        >
+    
+    <TextView 
+        android:id="@+id/patientMainLobbyTitle"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="center_horizontal"
+    	android:text="Patient Main Lobby"
+    	android:textSize="24dp"
+    	android:layout_marginTop="20dp"
+    	android:layout_marginBottom="30dp"
+        />
+    
+	<TableLayout 
+    	android:id="@+id/patientMainLobbyLayout"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_below="@+id/patientMainLobbyTitle"
+   	 	>
+   	 	
+	    <TableRow android:id="@+id/firstRow"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_horizontal"
+	        android:layout_marginBottom="20dp">
+			<RelativeLayout 
+			    android:id="@+id/firstRowColumnOne"
+			    android:layout_width="match_parent"			    
+	            android:layout_height="wrap_content"	            
+	            android:clickable="true"
+	            android:onClick="modifyDataOnClick"
+	            >
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"	            	            
+	            android:src="@android:drawable/ic_menu_manage" />
+
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"	            
+	            android:layout_below="@+id/imageView1"
+	            android:text="Modify Data"
+	            android:textSize="14dp"
+	            android:gravity="center_horizontal"
+	            />
+	        </RelativeLayout>
+			
+	    	<RelativeLayout 
+			    android:id="@+id/firstRowColumnTwo"
+			    android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:clickable="true"
+	            android:onClick="providerInfoOnClick">
+	        <ImageView
+	            android:id="@+id/imageView2"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:src="@android:drawable/ic_menu_info_details" />
+
+	        <TextView
+	            android:id="@+id/textView2"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@+id/imageView2"
+	            android:text="Provider Information"
+	            android:textSize="14dp"
+	            android:gravity="center_horizontal" />
+			</RelativeLayout>
+	    </TableRow>   
+	    <TableRow android:id="@+id/secondRow"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"	        
+	        android:gravity="center_horizontal"
+	        android:layout_marginBottom="20dp">
+			<RelativeLayout 
+			    android:id="@+id/firstRowColumnOne"
+			    android:layout_width="match_parent"			    
+	            android:layout_height="wrap_content"
+	            android:clickable="true"
+	            android:onClick="enterManuallyOnClick"
+	            >
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"	            	            
+	            android:src="@android:drawable/ic_menu_edit" />
+
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"	            
+	            android:layout_below="@+id/imageView1"
+	            android:text="Enter Data Manually"
+	            android:textSize="14dp"
+	            android:gravity="center_horizontal" />
+	        </RelativeLayout>
+			
+	    	<RelativeLayout 
+			    android:id="@+id/firstRowColumnTwo"
+			    android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:clickable="true"
+	            android:onClick="bluetoothDeviceOnClick">
+	        <ImageView
+	            android:id="@+id/imageView2"
+	            android:layout_width="match_parent"
+	            android:layout_height="48dp"
+	            android:src="@android:drawable/stat_sys_data_bluetooth" />
+
+	        <TextView
+	            android:id="@+id/textView2"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@+id/imageView2"
+	            android:text="Bluetooth Device"
+	            android:textSize="14dp"
+	            android:gravity="center_horizontal" />
+			</RelativeLayout>
+	        
+	    </TableRow>
+    
+    	<TableRow android:id="@+id/thirdRow"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"	        
+	        android:gravity="center_horizontal"
+	        android:layout_marginBottom="20dp">
+			<RelativeLayout 
+			    android:id="@+id/firstRowColumnOne"
+			    android:layout_width="match_parent"			    
+	            android:layout_height="wrap_content"
+	            android:clickable="true"
+	            android:onClick="displayReportOnClick"
+	            
+	            >
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"	            	            
+	            android:src="@android:drawable/ic_menu_gallery" />
+
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"	            
+	            android:layout_below="@+id/imageView1"
+	            android:text="Display Report"
+	            android:textSize="14dp"
+	            android:gravity="center_horizontal" />
+	        </RelativeLayout>
+			
+	    	<RelativeLayout 
+			    android:id="@+id/firstRowColumnTwo"
+			    android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:clickable="true"
+	            android:onClick="signOutOnClick">
+	        <ImageView
+	            android:id="@+id/imageView2"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+	        <TextView
+	            android:id="@+id/textView2"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@+id/imageView2"
+	            android:text="Sign Out"
+	            android:textSize="14dp"
+	            android:gravity="center_horizontal" />
+			</RelativeLayout>
+	        
+	    </TableRow>
+</TableLayout>
+</RelativeLayout>
+</ScrollView>

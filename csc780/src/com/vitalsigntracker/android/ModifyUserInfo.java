@@ -18,33 +18,34 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
-public class UserInfo extends Activity {
+public class ModifyUserInfo extends Activity {
 	
-	private EditText uifirstnameField,
-	 				 uilastnameField,
-	 				 uiPasswordField,
-	 				 uiphoneField,
-	 				 uiemailField;
-
 	private InputStream inpS;
 	private OutputStream outS;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.userinformation);
-		
-		uifirstnameField = (EditText) findViewById(R.id.uifirstnameField);
-		uilastnameField = (EditText) findViewById(R.id.uilastnameField);
-		uiPasswordField = (EditText) findViewById(R.id.uiPasswordField);
-		uiphoneField = (EditText) findViewById(R.id.uiphoneField);
-		uiemailField = (EditText) findViewById(R.id.uiemailField);
+		setContentView(R.layout.userinformation);				
 	}
 	
-public void uiOkClick(View v) {
+	
+	public void uiModifyEmailOnClick (View v) {
+		Toast.makeText(this, "modify email on click", Toast.LENGTH_SHORT).show();
+	}
+	
+	public void uiModifyPhoneOnClick (View v) {
+		Toast.makeText(this, "modify phone on click", Toast.LENGTH_SHORT).show();
+	}
+	
+	public void uiModifyPasswordOnClick (View v) {
+		Toast.makeText(this, "modify password on click", Toast.LENGTH_SHORT).show();
+	}
+	
+	
+	public void uiOkClick(View v) {
 		
 		//Toast.makeText(this, "BUtton OK Press", Toast.LENGTH_LONG).show();
 		try {
@@ -53,7 +54,7 @@ public void uiOkClick(View v) {
             sock.connect(socketAddress, 10 * 1000);
             inpS = sock.getInputStream();
             outS = sock.getOutputStream();
-            Toast.makeText(this, "BUtton OK Press", Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "BUtton OK Press", Toast.LENGTH_LONG).show();
             Scanner in = new Scanner(inpS);
             PrintWriter out = new PrintWriter(outS, true);
             
@@ -92,25 +93,12 @@ public void uiOkClick(View v) {
         }		
 	}
 	
-	public void uiResetClick(View v) {
-		uifirstnameField.setText("");
-		uilastnameField.setText("");
-		uiPasswordField.setText("");
-		uiphoneField.setText("");
-		uiemailField.setText("");
-	}
-	
 	public String prepareJSONString() {
         String str = null;
 
         try {
             JSONObject object = new JSONObject();
-            object.put("code", "editUserInfo");
-            object.put("firstname", uifirstnameField.getText());
-            object.put("lastname", uilastnameField.getText());
-            object.put("password", uiPasswordField.getText());
-            object.put("phone", uiphoneField.getText());
-            object.put("email", uiemailField.getText());
+            object.put("code", "editUserInfo");                        
             str = object.toString();
             
 //For debug purpose only

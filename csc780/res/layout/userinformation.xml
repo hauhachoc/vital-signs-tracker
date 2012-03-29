@@ -1,133 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true">
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="#90006400"
     android:padding="20dp" >
     
     <TextView
         android:id="@+id/uiTitle"
-        android:textSize="18dp"
+        android:textSize="24dp"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:text="@string/uiModifyTitle" />              
+    
+    <TextView 
+        android:id="@+id/uiNotice"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:textSize="12dp"
+        android:textStyle="italic"        
+        android:text="@string/uiNotice"
+        android:layout_below="@+id/uiTitle" />
+    
+    <TextView 
+        android:id="@+id/optionTextTitle"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:textSize="16dp"  
+        android:layout_below="@+id/uiNotice"
+        android:text="@string/optionTextTitle"
+        android:layout_marginBottom="15dp"
+        />
+    
+    
+    <ImageView 
+	    android:id="@+id/uiEmailArea"
+	    android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/clickableUIText"
+        android:clickable="true"
+        android:onClick="uiModifyEmailOnClick"
+        android:layout_below="@+id/optionTextTitle"
         android:layout_marginBottom="10dp"
-        android:text="@string/uiTitle" />          
-    <TextView 
-        android:id="@+id/uifirstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/uifName"
-        android:layout_below="@+id/uiTitle"
-        android:layout_marginBottom="2dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="14dp" 
-        />
-    <EditText
-        android:id="@+id/uifirstnameField"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:textSize="12dp"
-        android:layout_below="@+id/uifirstName"
-        android:layout_marginBottom="6dp"        
-        android:hint="@string/firstnameHint" />
-    
-    <TextView 
-        android:id="@+id/uilastName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/uilName"
-        android:layout_below="@+id/uifirstnameField"
-        android:layout_marginBottom="2dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="14dp"  
-        />
-    <EditText
-        android:id="@+id/uilastnameField"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:textSize="12dp"
-        android:layout_below="@+id/uilastName"
-        android:layout_marginBottom="6dp"
-        android:hint="@string/lastnameHint" />
-    
+	    />
     <TextView 
         android:id="@+id/uiemail"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="@string/email"
-        android:layout_below="@+id/uilastnameField"
-        android:layout_marginBottom="2dp"
+        android:layout_below="@+id/optionTextTitle"        
         android:layout_marginLeft="10dp"
-        android:textSize="14dp"  
-        />
-    <EditText
-        android:id="@+id/uiemailField"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:textSize="12dp"
-        android:layout_below="@+id/uiemail"
-        android:layout_marginBottom="6dp"
-        android:hint="@string/emailHint" />
+        android:textSize="18dp"  
+        android:gravity="center_vertical"
+        android:textColor="#90006400" 
+        />   
     
+    <ImageView 
+	    android:id="@+id/uiPhoneArea"
+	    android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/clickableUIText"
+        android:clickable="true"
+        android:onClick="uiModifyPhoneOnClick"
+        android:layout_below="@+id/uiEmailArea"       
+        android:layout_marginBottom="8dp"
+	    />
 	<TextView 
         android:id="@+id/uiphone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="@string/phone"
-        android:layout_below="@+id/uiemailField"
+        android:layout_below="@+id/uiEmailArea"
         android:layout_marginBottom="2dp"
         android:layout_marginLeft="10dp"
-        android:textSize="14dp"  
+        android:textSize="18dp" 
+        android:gravity="center_vertical"
+        android:textColor="#90006400" 
         />
-    <EditText
-        android:id="@+id/uiphoneField"
-        android:layout_height="40dp"
-        android:layout_width="fill_parent"
-        android:textSize="12dp"        
-        android:layout_below="@+id/uiphone"
-        android:layout_marginBottom="6dp"
-        android:hint="@string/phoneHint"
-        android:inputType="phone" />
     
+	<ImageView 
+	    android:id="@+id/uiPasswordArea"
+	    android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/clickableUIText"
+        android:clickable="true"
+        android:onClick="uiModifyPasswordOnClick"
+        android:layout_below="@+id/uiPhoneArea"        
+	    />
     <TextView 
         android:id="@+id/uiPassword"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
         android:text="@string/password"
-        android:layout_below="@+id/uiphoneField"
+        android:layout_below="@+id/uiPhoneArea"
         android:layout_marginBottom="2dp"
         android:layout_marginLeft="10dp"
-        android:textSize="14dp"  
+        android:textSize="18dp"  
+        android:textColor="#90006400"
         />
-    <EditText
-        android:id="@+id/uiPasswordField"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:textSize="12dp"
-        android:layout_below="@+id/uiPassword"
-        android:layout_marginBottom="15dp"
-        android:hint="@string/passwordHint"
-        android:password="true" />
-	<Button
-        android:id="@+id/uiOKButton"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/uiPasswordField"        
-        android:layout_marginLeft="10dp"
-        android:text="@string/okButton"
-        android:clickable="true"
-        android:onClick="uiOkClick" />
-    <Button
-        android:id="@+id/resetButton"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/uiPasswordField"
-        android:layout_marginRight="10dp"
-        android:clickable="true"
-        android:onClick="uiResetClick"
-        android:text="@string/resetButton" />    
-
+    
 </RelativeLayout>
+</ScrollView>

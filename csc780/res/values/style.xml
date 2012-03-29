@@ -2,6 +2,6 @@
 <resources>
     
     <style name="sub1_font">bold</style>
-    <style name="sub2_font">italic|normal</style>
+    <style name="sub2_font">italic|normal</style>    
     
 </resources>

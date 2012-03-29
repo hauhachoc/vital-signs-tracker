@@ -20,10 +20,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class ForgetPassword extends Activity {
+public class PatientForgetPassword extends Activity {
 
-	EditText fName,
-			 lName;
+	EditText pName, email;			 
 	
 	private InputStream inpS;
     private OutputStream outS;
@@ -34,8 +33,8 @@ public class ForgetPassword extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.forgetpassword);
 		
-		fName = (EditText) findViewById(R.id.forgetfirstnameField);
-		lName = (EditText) findViewById(R.id.forgetlastnameField);
+		pName = (EditText) findViewById(R.id.forgetnameField);
+		email = (EditText) findViewById(R.id.forgetEmailField);
 	}
 	
 	public void forgetOkClick(View v) {
@@ -47,7 +46,8 @@ public class ForgetPassword extends Activity {
             sock.connect(socketAddress, 10 * 1000);
             inpS = sock.getInputStream();
             outS = sock.getOutputStream();
-            Toast.makeText(this, "BUtton OK Press", Toast.LENGTH_LONG).show();
+            
+            //Toast.makeText(this, "BUtton OK Press", Toast.LENGTH_LONG).show();
            
             Scanner in = new Scanner(inpS);
             PrintWriter out = new PrintWriter(outS, true);
@@ -57,7 +57,7 @@ public class ForgetPassword extends Activity {
             
             String response = in.nextLine();
 //for debug purpose only
-            Toast.makeText(this, "server response " + response, Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "server response " + response, Toast.LENGTH_LONG).show();
                                     
             inpS.close();
             out.close();
@@ -78,12 +78,11 @@ public class ForgetPassword extends Activity {
 			} else {								
 				AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 				alertDialog.setTitle("Retrieve Password Failed");
-				alertDialog.setMessage("First & Last Name Mismatch.");
+				alertDialog.setMessage("Name & Email Incorrect.");
 				alertDialog.setButton("Continue", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface d, int i) {
-						fName.setText("");
-						lName.setText("");
-						fName.setSelection(0);						
+						pName.setText("");
+						email.setText("");											
 					}
 				});
 				alertDialog.show();
@@ -97,8 +96,8 @@ public class ForgetPassword extends Activity {
 	}
 
 	public void forgetResetClick(View v) {
-		fName.setText("");
-		lName.setText("");
+		pName.setText("");
+		email.setText("");
 	}
 	
 	public String prepareJSONString() {
@@ -106,13 +105,13 @@ public class ForgetPassword extends Activity {
 
         try {
             JSONObject object = new JSONObject();
-            object.put("code", "forgetPassword");
-            object.put("firstname", fName.getText());            
-            object.put("lastname", lName.getText());        
+            object.put("code", "patientForgetPassword");
+            object.put("pname", pName.getText());            
+            object.put("email", email.getText());        
             str = object.toString();
             
 //For debug purpose only
-            Toast.makeText(this, "JSON Objects are: " + str, Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "JSON Objects are: " + str, Toast.LENGTH_LONG).show();
 
             
         } catch (Exception e) {

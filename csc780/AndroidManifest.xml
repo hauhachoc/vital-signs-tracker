@@ -9,18 +9,19 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
+        
         <activity
             android:name=".LoginPage"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            
         </activity>
         
         <activity 
-            android:name=".ForgetPassword"
-            android:theme="@android:style/Theme.Dialog">            
+            android:name=".PatientForgetPassword">            
+        </activity>
+        
+        <activity 
+            android:name=".ProviderForgetPassword">            
         </activity>
         
         <activity 
@@ -28,10 +29,73 @@
         </activity>
         
         <activity 
-            android:name=".MainLobby"
-            android:label="@string/mainlobbytitle">
-            
+            android:name=".PatientMainLobby"
+            android:label="@string/mainlobbytitle">           
+        </activity>
+        
+        <activity 
+            android:name=".ModifyUserInfo">                      
+        </activity>
+        
+        <activity 
+            android:name=".Welcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity 
+            android:name=".PatientLogin">            
+        </activity>
+        
+        <activity 
+            android:name=".PatientDisplayTable"
+            android:screenOrientation="landscape">            
+        </activity>        
+        
+        <activity 
+            android:name=".ProviderLogin">            
+        </activity>
+        
+        <activity 
+            android:name=".ProviderMainLobby">            
+        </activity>
+        
+        <activity 
+            android:name=".ProviderRegister1">            
+        </activity>
+        
+        <activity 
+            android:name=".ProviderRegister2">            
+        </activity>
+        
+        <activity 
+            android:name=".DisplayTable">            
+        </activity>
+        
+        <activity 
+            android:name=".DisplayChart">            
+        </activity>
+        
+        <activity 
+            android:name=".SubscribePatient">            
+        </activity>
+        
+        <activity 
+            android:name=".ProviderLogOut">            
+        </activity>
+        
+        <activity 
+            android:name=".PresentTable"
+            android:screenOrientation="landscape">            
+        </activity>
+        
+        <activity 
+            android:name=".Activate">            
         </activity>
     </application>
-	    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    
+	    <uses-permission android:name="android.permission.INTERNET">	        
+	    </uses-permission>
 </manifest>
