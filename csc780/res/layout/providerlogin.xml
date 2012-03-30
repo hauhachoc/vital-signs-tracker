@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#90006400"
+    android:orientation="vertical"
+    android:padding="20dp" >
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"        
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/providerTitleText"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+           
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleText"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/providerid"
+        android:textSize="14dp" />
+    <EditText
+        android:id="@+id/usernameField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_marginBottom="15dp"
+        android:hint="@string/provideridHint" />
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usernameField"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/password"
+        android:textSize="14dp" />
+    <EditText
+        android:id="@+id/passwordField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/passwordHint"
+        android:password="true" />
+
+    <RelativeLayout 
+        android:id="@+id/optionalMenu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" 
+        android:layout_marginBottom="20dp"       
+        android:layout_below="@+id/passwordField" >
+    
+    <TextView
+        android:id="@+id/forgetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"         
+        android:layout_marginRight="40dp"              
+        android:clickable="true"
+        android:onClick="clickForgetPassword"
+        android:text="@string/forget" />
+    
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/forgetPassword"
+        android:clickable="true"
+        android:onClick="clickRegister"
+        android:text="@string/register" />
+    </RelativeLayout>
+    <RelativeLayout 
+        android:id="@+id/optionsArea"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"                
+        android:layout_below="@+id/optionalMenu" >
+    
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:text="@string/okButton"
+        android:onClick="okLoginClick" />
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/okButton"                
+        android:onClick="resetClick"
+        android:text="@string/resetButton" />
+    </RelativeLayout>
+</RelativeLayout>
+</ScrollView>
