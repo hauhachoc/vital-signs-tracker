@@ -21,6 +21,10 @@
         </activity>
         
         <activity 
+            android:name=".About">            
+        </activity>
+        
+        <activity 
             android:name=".ProviderForgetPassword">            
         </activity>
         
@@ -87,12 +91,36 @@
         </activity>
         
         <activity 
+            android:name=".PatientChangeEmail">            
+        </activity>
+        
+        <activity 
+            android:name=".PatientChangePhone">            
+        </activity>
+        
+        <activity 
+            android:name=".PatientChangePassword">            
+        </activity>
+        
+        <activity 
+            android:name=".PatientEnterManually1">            
+        </activity>
+        
+        <activity 
+            android:name=".PatientEnterManually2">            
+        </activity>
+        
+        <activity 
             android:name=".PresentTable"
             android:screenOrientation="landscape">            
         </activity>
         
         <activity 
-            android:name=".Activate">            
+            android:name=".PatientActivateAccount">            
+        </activity>
+        
+        <activity 
+            android:name=".RequestProviderInfo">            
         </activity>
     </application>
     

@@ -72,15 +72,17 @@ public class ProviderLogin extends Activity {
             sock.close();
             
             JSONObject obj = new JSONObject(response);
-            String status = obj.getString("status");
+            boolean success = obj.getBoolean("status");
           
-            if (status.equals("Success")) {
+            if (success) {
           
-            	Toast.makeText(this, "status " + status, Toast.LENGTH_LONG).show();
+            	Toast.makeText(this, "success", Toast.LENGTH_LONG).show();
             	
+            	//store "all patient names" in SharedPreferences object.
+            	//it will be needed later to display the name of patients in Spinner (main lobby).
             	mySharedPreferences = this.getSharedPreferences(MY_PREFS, MODE_PRIVATE);
 	    		SharedPreferences.Editor editor = mySharedPreferences.edit();
-	    		editor.putString("allPatientName", response);	    		
+	    		editor.putString("allPatientName", response);		    		
 	    		editor.commit();	    		    
 	    	            	
             	Intent i = new Intent(this, ProviderMainLobby.class);
@@ -94,26 +96,25 @@ public class ProviderLogin extends Activity {
 				alertDialog.setButton("Continue", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface d, int i) {
 						username.setText("");
-						password.setText("");
-						//username.setSelection(0);						
+						password.setText("");											
 					}
 				});
 				alertDialog.show();
-			}
-            
-            
+			}         
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
-        }
-		
-	}
-    	
+        }	
+	}    	
   
 	public String prepareJSONString() {
         String str = null;
-
+        mySharedPreferences = this.getSharedPreferences(MY_PREFS, MODE_PRIVATE);
+		SharedPreferences.Editor editor = mySharedPreferences.edit();
+		editor.putString("providerid", username.getText().toString());
+		editor.commit();
+		
         try {
             JSONObject object = new JSONObject();
             object.put("code", "providerlogin");

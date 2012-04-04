@@ -109,6 +109,9 @@
     <string name="submitButton">Submit</string>
     
     
+    <!-- Strings from About.java -->
+    <string name="content">Vital Signs Tracker ver. 1.0.0</string>
+    
 </resources>
 
 

@@ -56,18 +56,18 @@ public class ProviderForgetPassword extends Activity {
             out.println(json);
             
             String response = in.nextLine();
-//for debug purpose only
-            //Toast.makeText(this, "server response " + response, Toast.LENGTH_LONG).show();
+            JSONObject obj = new JSONObject(response);
+            boolean success = obj.getBoolean("status");
                                     
             inpS.close();
             out.close();
             outS.close();
             sock.close();
             
-            if (response.length() != 0) {
+            if (success) {
             	AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 				alertDialog.setTitle("Retrieve Password Success");
-				alertDialog.setMessage("Your password is " + response);
+				alertDialog.setMessage("Your password is " + obj.getString("password"));
 				alertDialog.setButton("Continue", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface d, int i) {
 						finish();						
@@ -110,11 +110,7 @@ public class ProviderForgetPassword extends Activity {
             object.put("firstname", fName.getText());            
             object.put("lastname", lName.getText());        
             str = object.toString();
-            
-//For debug purpose only
-            //Toast.makeText(this, "JSON Objects are: " + str, Toast.LENGTH_LONG).show();
 
-            
         } catch (Exception e) {
             e.printStackTrace();  
         }

@@ -21,7 +21,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class Activate extends Activity {
+public class PatientActivateAccount extends Activity {
 
 	private InputStream inpS;
     private OutputStream outS;
@@ -55,11 +55,15 @@ public class Activate extends Activity {
             out.println(json);
             
             String response = in.nextLine();
+            JSONObject obj = new JSONObject(response);
+            boolean success = obj.getBoolean("status");
+            
             inpS.close();
             out.close();
             outS.close();
             sock.close();
-            if (response.equals("Success")) {
+            
+            if (success) {
             	AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 				alertDialog.setTitle("Activate Account Success");
 				alertDialog.setMessage("Account Activated.");
@@ -97,7 +101,7 @@ public class Activate extends Activity {
 
         try {
             JSONObject object = new JSONObject();
-            object.put("code", "activateAccount");
+            object.put("code", "patientActivateAccount");
             object.put("drname", drname.getText());
             object.put("email", email.getText());
             object.put("password", password.getText());        

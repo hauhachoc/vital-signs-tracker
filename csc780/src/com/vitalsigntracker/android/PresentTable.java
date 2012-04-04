@@ -1,7 +1,6 @@
 package com.vitalsigntracker.android;
 
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -27,14 +26,21 @@ public class PresentTable extends Activity {
 		display = (TableLayout) findViewById(R.id.presentPatientTable);
 		
 		SharedPreferences mySharedPreferences = this.getSharedPreferences("MY_PREFS", MODE_PRIVATE);
-		String queryResult = mySharedPreferences.getString("displayTableJson", "");
+		String queryResult = mySharedPreferences.getString("displayTableJson", "");		
 		String patientName = mySharedPreferences.getString("pName", "");		
 		
 		patientNameField = (TextView) findViewById(R.id.patientNameText);
 		patientNameField.setText(patientName);
 		
-		JSONObject obj = (JSONObject) JSONValue.parse(queryResult);
-		int numberRows = Integer.parseInt(obj.get("numberRows").toString());
+		JSONObject obj = null;
+		int numberRows = 0;
+		
+		try {
+			obj = new JSONObject(queryResult);
+			numberRows = obj.getInt("numberRows");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 					
 		TableRow row;
 		TextView text;
@@ -43,7 +49,11 @@ public class PresentTable extends Activity {
 			row = new TableRow(this);
 			text = new TextView(this);
 			
-			text.setText(obj.get(Integer.toString(i+1)).toString());
+			try {
+				text.setText(obj.getString(Integer.toString(i+1)));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			row.setMinimumHeight(24);
 			
 			if (i % 2 == 1) {

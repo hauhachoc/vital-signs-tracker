@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class DisplayTable extends Activity {
 
@@ -159,12 +160,12 @@ public class DisplayTable extends Activity {
 	            out.println(str);
 	            
 	            String response = in.nextLine();
-	                                    
+         
 	            inpS.close();
 	            out.close();
 	            outS.close();
 	            sock.close();
-	            
+	            	            
 	            //put the "response" (json string) in SharedPreferences and call the PresentTable class
 	            //to display the table.
 	            mySharedPreferences = this.getSharedPreferences(MY_PREFS, MODE_PRIVATE);
@@ -175,7 +176,7 @@ public class DisplayTable extends Activity {
 	            
 	    		Intent i = new Intent(this, PresentTable.class);
 	    		startActivity(i);
-	            
+	            	            
 			} catch (Exception e) {
 				e.printStackTrace();
 			}	            

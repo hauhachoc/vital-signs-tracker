@@ -129,7 +129,7 @@ public class LoginPage extends Activity {
     
     public void clickActivate(View v) {
     	//Source code here
-    	Intent j = new Intent(this, Activate.class);
+    	Intent j = new Intent(this, PatientActivateAccount.class);
     	startActivity(j);
     	
     }

@@ -65,16 +65,20 @@ public class PatientLogin extends Activity {
             out.println(json);
             
             String response = in.nextLine();
-        
+            JSONObject obj = new JSONObject(response);
+            boolean success = obj.getBoolean("status");
+            
             inpS.close();
             out.close();
             outS.close();
             sock.close();
-            if (response.equals("Success")) {
+            
+            if (success) {
             	
             	mySharedPreferences = this.getSharedPreferences(MY_PREFS, MODE_PRIVATE);
 	    		SharedPreferences.Editor editor = mySharedPreferences.edit();
-	    		editor.putString("patientEmail", username.getText().toString());	    		
+	    		editor.putString("patientEmail", username.getText().toString());
+	    		editor.putString("patientname", obj.getString("patientname"));
 	    		editor.commit();
 	    		
             	Intent i = new Intent(this, PatientMainLobby.class);
@@ -107,7 +111,7 @@ public class PatientLogin extends Activity {
 
         try {
             JSONObject object = new JSONObject();
-            object.put("code", "login");
+            object.put("code", "patientLogin");
             object.put("email", username.getText());            
             object.put("password", password.getText());        
             str = object.toString();
@@ -132,7 +136,7 @@ public class PatientLogin extends Activity {
     
     public void clickActivate(View v) {
     	//Source code here
-    	Intent j = new Intent(this, Activate.class);
+    	Intent j = new Intent(this, PatientActivateAccount.class);
     	startActivity(j);   	
     }
 }

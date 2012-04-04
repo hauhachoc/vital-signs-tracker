@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -33,7 +34,8 @@ public class ModifyUserInfo extends Activity {
 	
 	
 	public void uiModifyEmailOnClick (View v) {
-		Toast.makeText(this, "modify email on click", Toast.LENGTH_SHORT).show();
+		Intent i = new Intent(this, PatientChangeEmail.class);
+		startActivity(i);
 	}
 	
 	public void uiModifyPhoneOnClick (View v) {

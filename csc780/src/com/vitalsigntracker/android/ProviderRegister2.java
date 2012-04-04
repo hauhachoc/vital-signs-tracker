@@ -73,13 +73,15 @@ public class ProviderRegister2 extends Activity {
 			out.println(json);
 
 			String response = in.nextLine();
-			
+			JSONObject obj = new JSONObject(response);
+            boolean success = obj.getBoolean("status");
+            
 			inpS.close();
 			out.close();
 			outS.close();
 			sock.close();
 
-			if (response.equals("Success")) {
+			if (success) {
 				Intent j = new Intent(this, ProviderLogin.class);
 				startActivity(j);
 			} else {

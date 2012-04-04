@@ -15,6 +15,8 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +26,9 @@ public class SubscribePatient extends Activity {
 	EditText patientName, email, phone;
 	private InputStream inpS;
 	private OutputStream outS;
+	
+	public String MY_PREFS = "MY_PREFS";
+	public SharedPreferences mySharedPreferences;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +58,7 @@ public class SubscribePatient extends Activity {
 			alertDialog.show();
 			
 		} else {
-			
+			mySharedPreferences = this.getSharedPreferences(MY_PREFS, MODE_PRIVATE);
 			String str = null;
 			try {
 				JSONObject object = new JSONObject();
@@ -61,6 +66,7 @@ public class SubscribePatient extends Activity {
 				object.put("patientName", patientName.getText());
 				object.put("email", email.getText());
 				object.put("phone", phone.getText());
+				object.put("providerid", mySharedPreferences.getString("providerid", ""));
 				str = object.toString();			
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -79,8 +85,10 @@ public class SubscribePatient extends Activity {
 	            out.println(str);
 	            
 	            String response = in.nextLine();
+	            JSONObject obj = new JSONObject(response);
+	            boolean success = obj.getBoolean("status");
 	            
-	            if (response.equals("Success")) {
+	            if (success) {
 	            	
 	            	AlertDialog alertDialog = new AlertDialog.Builder(this)
 					.create();
@@ -95,6 +103,9 @@ public class SubscribePatient extends Activity {
 						}
 					});
 	            	alertDialog.show();
+	            	
+	            	Intent i = new Intent(this, ProviderMainLobby.class);
+	            	startActivity(i);
 					
 				} else {
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 public class Welcome extends Activity {
@@ -40,6 +41,27 @@ public class Welcome extends Activity {
 	public boolean onCreateOptionsMenu (Menu menu) {
 		
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate()
+		inflater.inflate(R.menu.options, menu);
+		return true;
 	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		
+		switch (item.getItemId()) {
+		
+		case R.id.menuExit:
+			finish();
+			return true;
+		case R.id.menuAbout:
+			Intent i = new Intent(this, About.class);
+			startActivity(i);
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+		
+	}
+	
+	
 }
