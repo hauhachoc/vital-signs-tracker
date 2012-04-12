@@ -1,4 +1,8 @@
-package com.vitalsigntracker.android;
+package com.vitalsigntracker.android.Patient;
+
+import com.vitalsigntracker.android.R;
+import com.vitalsigntracker.android.R.id;
+import com.vitalsigntracker.android.R.layout;
 
 import android.app.Activity;
 import android.app.AlertDialog;

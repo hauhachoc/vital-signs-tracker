@@ -1,5 +1,8 @@
 package com.vitalsigntracker.android;
 
+import com.vitalsigntracker.android.Patient.PatientLogin;
+import com.vitalsigntracker.android.Provider.ProviderLogin;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

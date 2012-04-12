@@ -1,4 +1,4 @@
-package com.vitalsigntracker.android;
+package com.vitalsigntracker.android.Provider;
 
 import java.util.ArrayList;
 import android.app.AlertDialog;

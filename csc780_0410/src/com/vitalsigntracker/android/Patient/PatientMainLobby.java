@@ -1,20 +1,11 @@
-package com.vitalsigntracker.android;
+package com.vitalsigntracker.android.Patient;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.SocketAddress;
 import java.util.List;
 import java.util.Locale;
-import java.util.Scanner;
-
-import metadata.Constants;
-
+import org.json.JSONException;
 import org.json.JSONObject;
-
+import com.vitalsigntracker.android.*;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -30,13 +21,10 @@ import android.telephony.*;
 import android.view.View;
 import android.widget.Toast;
 
-
 public class PatientMainLobby extends Activity {
 	
 	String MY_PREFS = "MY_PREFS";
-	SharedPreferences mySharedPreferences;
-	private InputStream inpS;
-	private OutputStream outS;
+	SharedPreferences mySharedPreferences;	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -47,7 +35,7 @@ public class PatientMainLobby extends Activity {
 	public void modifyDataOnClick(View v) {
 		//Toast.makeText(this, "click to edit user info", Toast.LENGTH_SHORT).show();
 		
-		Intent i = new Intent(this, ModifyUserInfo.class);
+		Intent i = new Intent(this, PatientModifyInfo.class);
 		startActivity(i);
 		
 	}
@@ -75,7 +63,7 @@ public class PatientMainLobby extends Activity {
 		startActivity(i);
 	}
 	
-	public void emergencyRequestOnClick (View v) {
+	public void emergencyRequestOnClick (View v) throws JSONException {
 		LocationManager lm = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 		LocationListener listener = new LocationListener() {
 			
@@ -124,79 +112,48 @@ public class PatientMainLobby extends Activity {
 			e.printStackTrace();
 		}
 		
-		Address add = address.get(0);
-		
-		//Toast.makeText(this, "lat = " + currentLatitude + " long = " + currentLongitude + " add " + address, Toast.LENGTH_LONG).show();
-		
+		Address add = address.get(0);		
 		mySharedPreferences = this.getSharedPreferences(MY_PREFS, MODE_PRIVATE);
 		String str = null;		
-		try {
-			JSONObject json = new JSONObject();
-			json.put("code", "patientemergencyrequest");
-			json.put("latitude", currentLatitude);
-			json.put("longitude", currentLongitude);
-			json.put("streetName", add.getAddressLine(0));
-			json.put("city", add.getLocality());
-			json.put("patientname", mySharedPreferences.getString("patientname", ""));
-			json.put("message", "Emergency Request!");
-			str = json.toString();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		
-		try {
-			SocketAddress socketAddress = new InetSocketAddress(
-					Constants.IP_ADD, Constants.PORT);
-			Socket sock = new Socket();
-			sock.connect(socketAddress, 10 * 1000);
-			inpS = sock.getInputStream();
-			outS = sock.getOutputStream();
+		JSONObject json = new JSONObject();
+		json.put("code", "patientemergencyrequest");
+		json.put("latitude", currentLatitude);
+		json.put("longitude", currentLongitude);
+		json.put("streetName", add.getAddressLine(0));
+		json.put("city", add.getLocality());
+		json.put("patientname", mySharedPreferences.getString("patientname", ""));
+		json.put("message", "Emergency Request!");
+		str = json.toString();
+				
+    	String response = ConnectionManager.connect(str);    	
+    	boolean success = false;    	       
+	
+		JSONObject obj = new JSONObject(response);
+		success = obj.getBoolean("status");                        		
+
+		if (success) {
+			//Health care provider is online.
+			Toast.makeText(this, "Emergency Request Submitted.", Toast.LENGTH_LONG).show();				
 			
-			Scanner in = new Scanner(inpS);
-			PrintWriter out = new PrintWriter(outS, true);
-
-			// get the json string
+		} else {
+			Toast.makeText(this, "Provider is offline.", Toast.LENGTH_LONG).show();
+			//Health care provider is offline.
+			//Address add = address.get(0);				
+			String drphone = "1" + obj.getString("drphone");			
 			
-			// send the json string to server
-			out.println(str);
-
-			String response = in.nextLine();
-			JSONObject obj = new JSONObject(response);
-            boolean success = obj.getBoolean("status");
-            
-			inpS.close();
-			out.close();
-			outS.close();
-			sock.close();
-
-			if (success) {
-				//Health care provider is online.
-				Toast.makeText(this, "Emergency Request Submitted.", Toast.LENGTH_LONG).show();				
-				
-			} else {
-				Toast.makeText(this, "Provider is offline.", Toast.LENGTH_LONG).show();
-				//Health care provider is offline.
-				//Address add = address.get(0);				
-				String drphone = "1" + obj.getString("drphone");			
-				
-				String msg = "Patient Name: " + mySharedPreferences.getString("patientname", "") +
-						" Address: " + add.getAddressLine(0) + ", " + add.getLocality() + 
-						" Message: Emergency Request!";
-				SmsManager sm = SmsManager.getDefault();
-				sm.sendTextMessage(drphone, null, msg, null, null);
-				Toast.makeText(this, "Emergency Request Send via SMS.", Toast.LENGTH_LONG).show();
-				
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
+			String msg = "Patient Name: " + mySharedPreferences.getString("patientname", "") +
+					" Address: " + add.getAddressLine(0) + ", " + add.getLocality() + 
+					" Message: Emergency Request!";
+			SmsManager sm = SmsManager.getDefault();
+			sm.sendTextMessage(drphone, null, msg, null, null);
+			Toast.makeText(this, "Emergency Request Send via SMS.", Toast.LENGTH_LONG).show();
+			
 		}
 	}
-	
+		
 	public void signOutOnClick(View v) {		
 		Intent i = new Intent(this, Welcome.class);
 		startActivity(i);
 	}
-	
-	
 }

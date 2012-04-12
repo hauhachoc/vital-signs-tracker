@@ -1,17 +1,8 @@
-package com.vitalsigntracker.android;
-
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.SocketAddress;
-import java.util.Scanner;
-
-import metadata.Constants;
-
+package com.vitalsigntracker.android.Patient;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.vitalsigntracker.android.*;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -27,10 +18,7 @@ public class PatientEnterManually2 extends Activity {
 	String MY_PREFS = "MY_PREFS";
 	SharedPreferences mySharedPreferences;
 	EditText systole, diastole, heartRate, bodyTemp;
-	
-	private InputStream inpS;
-	private OutputStream outS;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -40,11 +28,10 @@ public class PatientEnterManually2 extends Activity {
 		systole = (EditText) findViewById(R.id.systole);
 		diastole = (EditText) findViewById(R.id.diastole);
 		heartRate = (EditText) findViewById(R.id.heartRate);
-		bodyTemp = (EditText) findViewById(R.id.bodyTemp);
-		
+		bodyTemp = (EditText) findViewById(R.id.bodyTemp);		
 	}
 
-	public void submitButtonOnClick (View v) {
+	public void submitButtonOnClick (View v) throws JSONException {
 		
 		if ((systole.getText()).equals(null) || 
 				(diastole.getText()).equals(null) || 
@@ -55,54 +42,29 @@ public class PatientEnterManually2 extends Activity {
 			alertDialog.setTitle("Error");
 			alertDialog.setMessage("Please enter complete information.");
 			alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface d, int i) {
-															
+				public void onClick(DialogInterface d, int i) {															
 				}
 			});
 			alertDialog.show();
 			
 		} else {
 			
-			try {
-				SocketAddress socketAddress = new InetSocketAddress(
-						Constants.IP_ADD, Constants.PORT);
-				Socket sock = new Socket();
-				sock.connect(socketAddress, 10 * 1000);
-				inpS = sock.getInputStream();
-				outS = sock.getOutputStream();
-				
-				Scanner in = new Scanner(inpS);
-				PrintWriter out = new PrintWriter(outS, true);
-
-				// get the json string
-				String json = prepareJSONString();
-				// send the json string to server
-				out.println(json);
-
-				String response = in.nextLine();
-				JSONObject obj = new JSONObject(response);
-	            boolean success = obj.getBoolean("status");
-	            
-				inpS.close();
-				out.close();
-				outS.close();
-				sock.close();
-
-				if (success) {
-					
-					Toast.makeText(this, "Data had been submitted.", Toast.LENGTH_LONG).show();
-					Intent j = new Intent(this, PatientMainLobby.class);
-					startActivity(j);
-				} 
-			} catch (Exception e) {
-				e.printStackTrace();
+		String json = prepareJSONString();
+    	String response = ConnectionManager.connect(json);    	
+    	boolean success = false;    	       
+	
+		JSONObject obj = new JSONObject(response);
+		success = obj.getBoolean("status");
+			if (success) {				
+				Toast.makeText(this, "Data had been submitted.", Toast.LENGTH_LONG).show();
+				Intent j = new Intent(this, PatientMainLobby.class);
+				startActivity(j);
 			}
-		}
+		}		
 	}
 	
 	public String prepareJSONString() {
 		String str = null;
-		
 		mySharedPreferences = this.getSharedPreferences(MY_PREFS, MODE_PRIVATE);						
 		
 		try {

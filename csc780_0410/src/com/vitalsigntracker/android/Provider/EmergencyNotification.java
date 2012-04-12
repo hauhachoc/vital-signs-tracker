@@ -1,4 +1,4 @@
-package com.vitalsigntracker.android;
+package com.vitalsigntracker.android.Provider;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
+import com.vitalsigntracker.android.*;
 
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;

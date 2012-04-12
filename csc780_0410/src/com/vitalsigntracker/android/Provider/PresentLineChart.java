@@ -1,4 +1,4 @@
-package com.vitalsigntracker.android;
+package com.vitalsigntracker.android.Provider;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -9,7 +9,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import com.vitalsigntracker.android.R;
 import com.vitalsigntracker.android.Graph.*;
+import com.vitalsigntracker.android.R.layout;
 
 
 public class PresentLineChart extends Activity {	
@@ -84,8 +86,7 @@ public class PresentLineChart extends Activity {
 		}
 		graphView.addSeries(new GraphView.GraphViewSeries(arr1));
 		graphView.addSeries(new GraphView.GraphViewSeries(arr2));		
-		setContentView(graphView);
-	
+		setContentView(graphView);	
 	}
 	
 	@Override

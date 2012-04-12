@@ -1,4 +1,8 @@
-package com.vitalsigntracker.android;
+package com.vitalsigntracker.android.Provider;
+
+import com.vitalsigntracker.android.R;
+import com.vitalsigntracker.android.R.id;
+import com.vitalsigntracker.android.R.layout;
 
 import android.app.Activity;
 import android.content.Intent;
