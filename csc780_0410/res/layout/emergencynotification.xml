@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#90006400"
+    android:padding="10dp"
+    android:orientation="vertical" >
+
+    <FrameLayout 
+        android:id="@+id/map_frame"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"                
+        >        
+        <com.google.android.maps.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:apiKey="0mDPgNUR93byfyV44KSYojHetHunaHSeAbeHJ9A"/>
+    </FrameLayout>
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:layout_marginTop="25dp"             
+        />
+    <TextView
+        android:id="@+id/textAdd1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"                     
+        />
+    <TextView
+        android:id="@+id/textAdd2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"                     
+        />    
+    <TextView
+        android:id="@+id/textMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"                
+        />
+
+</LinearLayout>

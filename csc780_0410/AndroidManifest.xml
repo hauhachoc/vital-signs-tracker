@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vitalsigntracker.android"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >               
+        
+        <activity 
+            android:name=".Patient.PatientForgetPassword"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity 
+            android:name=".Provider.ProviderForgetPassword"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity 
+            android:name=".Register"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            >                        
+        </activity>
+        
+        <activity 
+            android:name=".Patient.PatientMainLobby"    
+            android:screenOrientation="portrait"        
+            android:theme="@android:style/Theme.NoTitleBar">           
+        </activity>
+        
+        <activity 
+            android:name=".Patient.PatientModifyInfo"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">                      
+        </activity>
+        
+        <activity 
+            android:name=".Welcome"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity 
+            android:name=".Patient.PatientLogin"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity 
+            android:name=".Patient.PatientDisplayTable"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>        
+        
+        <activity 
+            android:name=".Provider.ProviderLogin"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity 
+            android:name=".Provider.ProviderMainLobby"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity 
+        	android:name=".Provider.ProviderRegister1"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity 
+        	android:name=".Provider.ProviderRegister2"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity 
+            android:name=".DisplayTable"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity 
+            android:name=".Provider.DisplayGraph"            
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity 
+        	android:name=".Provider.PresentLineChart"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity
+            android:name=".Provider.SubscribePatient"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>                  
+        
+        <activity 
+            android:name=".PresentTable"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity 
+            android:name=".Patient.PatientActivateAccount"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">            
+        </activity>
+        
+        <activity android:name=".About"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
+        
+        <activity android:name=".Patient.PatientChangeEmail"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
+        
+        <activity
+  			android:name=".Patient.PatientChangePassword"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
+        
+        <activity 
+            android:name=".Patient.PatientChangePhone"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
+        
+        <activity
+ 			android:name=".Patient.PatientEnterManually1"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
+        
+        <activity android:name=".Patient.PatientEnterManually2"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
+        
+        <activity 
+            android:name=".Patient.RequestProviderInfo"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
+        
+        <activity
+            android:name=".Provider.EmergencyNotification"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>        
+        
+        <service             
+            android:name=".Provider.ProviderConnectionThread">            
+        </service>
+        <uses-library android:name="com.google.android.maps" />
+    </application>
+    
+	    <uses-permission android:name="android.permission.INTERNET" />
+	    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />  
+	    <uses-permission android:name="android.permission.SEND_SMS"/>
+	    
+</manifest>

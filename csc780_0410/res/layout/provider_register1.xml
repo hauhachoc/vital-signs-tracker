@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#90006400"
+    android:padding="20dp" >
+    
+    <TextView
+        android:id="@+id/uiTitle"        
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#000000"                
+        android:shadowColor="#51CA95"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="0.6"
+        android:text="@string/uiproviderTitle1" />      
+        
+    <TextView 
+        android:id="@+id/uiproviderId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/providerid"
+        android:layout_below="@+id/uiTitle"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14dp" 
+        />
+    <EditText
+        android:id="@+id/uiprovideridField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"        
+        android:layout_below="@+id/uiproviderId"
+        android:layout_marginBottom="6dp"        
+        android:hint="@string/provideridHint" />
+    
+    <TextView 
+        android:id="@+id/uifirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/uifName"
+        android:layout_below="@+id/uiprovideridField"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14dp" 
+        />
+    <EditText
+        android:id="@+id/uiproviderfirstnameField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"        
+        android:layout_below="@+id/uifirstName"
+        android:layout_marginBottom="6dp"        
+        android:hint="@string/firstnameHint" />
+    
+    <TextView 
+        android:id="@+id/uilastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/uilName"
+        android:layout_below="@+id/uiproviderfirstnameField"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="14dp"  
+        />
+    <EditText
+        android:id="@+id/uiproviderlastnameField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"        
+        android:layout_below="@+id/uilastName"
+        android:layout_marginBottom="15dp"
+        android:hint="@string/lastnameHint" />
+	
+     <RelativeLayout 
+        android:id="@+id/optionsArea"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"        
+        android:layout_below="@+id/uiproviderlastnameField" >
+    
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:text="@string/nextButton"
+        android:onClick="nextButtonOnClick"
+        />
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/nextButton"                
+        android:onClick="resetClick"
+        android:text="@string/resetButton" />
+    </RelativeLayout>
+</RelativeLayout>
+</ScrollView>
