@@ -11,5 +11,4 @@
         android:layout_height="match_parent"
         android:text="Vital Signs Tracker Version 1.0.0"
         />
-
 </LinearLayout>

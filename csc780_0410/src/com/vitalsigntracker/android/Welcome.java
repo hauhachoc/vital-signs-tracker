@@ -18,21 +18,20 @@ public class Welcome extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcome);
-				
 	}
-	
+
 	public void patientOnClick(View v) {
-	
+
 		Intent i = new Intent(this, PatientLogin.class);
 		startActivity(i);
 	}
-	
+
 	public void providerOnClick(View v) {
-		
+
 		Intent j = new Intent(this, ProviderLogin.class);
 		startActivity(j);
 	}
-	
+
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
@@ -40,10 +39,10 @@ public class Welcome extends Activity {
 		Intent i = new Intent(this, Welcome.class);
 		startActivity(i);
 	}
-	
+
 	@Override
-	public boolean onCreateOptionsMenu (Menu menu) {
-		
+	public boolean onCreateOptionsMenu(Menu menu) {
+
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.options, menu);
 		return true;
@@ -52,12 +51,12 @@ public class Welcome extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
-		
+
 		switch (item.getItemId()) {
 		case R.id.mnuAbout:
 			Intent i = new Intent(this, About.class);
 			startActivity(i);
-			return true;			
+			return true;
 		case R.id.mnuExit:
 			moveTaskToBack(true);
 			return true;
@@ -65,8 +64,4 @@ public class Welcome extends Activity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
-	
-	
-	
-	
 }

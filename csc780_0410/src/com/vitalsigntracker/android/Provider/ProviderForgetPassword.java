@@ -20,64 +20,66 @@ public class ProviderForgetPassword extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.providerforgetpassword);
-		
+
 		fName = (EditText) findViewById(R.id.forgetfirstnameField);
 		lName = (EditText) findViewById(R.id.forgetlastnameField);
 	}
-	
+
 	public void forgetOkClick(View v) throws JSONException {
-		
+
 		String json = prepareJSONString();
-    	String response = ConnectionManager.connect(json);    	
-    	boolean success = false;    	       
-	
+		String response = ConnectionManager.connect(json);
+		boolean success = false;
+
 		JSONObject obj = new JSONObject(response);
-		success = obj.getBoolean("status");	
-            
-        if (success) {
-        	AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+		success = obj.getBoolean("status");
+
+		if (success) {
+			AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 			alertDialog.setTitle("Retrieve Password Success");
 			alertDialog.setMessage("Your password is " + response);
-			alertDialog.setButton("Continue", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface d, int i) {
-					finish();						
-				}
-			});
-			alertDialog.show();			
-			
-		} else {								
+			alertDialog.setButton("Continue",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface d, int i) {
+							finish();
+						}
+					});
+			alertDialog.show();
+
+		} else {
 			AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 			alertDialog.setTitle("Retrieve Password Failed");
 			alertDialog.setMessage("First & Last Name Mismatch.");
-			alertDialog.setButton("Continue", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface d, int i) {
-					fName.setText("");
-					lName.setText("");
-					fName.setSelection(0);						
-				}
-			});
+			alertDialog.setButton("Continue",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface d, int i) {
+							fName.setText("");
+							lName.setText("");
+							fName.setSelection(0);
+						}
+					});
 			alertDialog.show();
-		}                  
+		}
 	}
 
 	public void forgetResetClick(View v) {
 		fName.setText("");
 		lName.setText("");
 	}
-	
+
 	public String prepareJSONString() {
-        String str = null;
+		String str = null;
 
-        try {
-            JSONObject object = new JSONObject();
-            object.put("code", "providerForgetPassword");
-            object.put("firstname", fName.getText());            
-            object.put("lastname", lName.getText());        
-            str = object.toString();
+		try {
+			JSONObject object = new JSONObject();
+			object.put("code", "providerForgetPassword");
+			object.put("firstname", fName.getText());
+			object.put("lastname", lName.getText());
+			str = object.toString();
 
-        } catch (Exception e) {
-            e.printStackTrace();  
-        }
-        return str;
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return str;
+	}
 }

@@ -1,9 +1,6 @@
 package com.vitalsigntracker.android.Provider;
 
 import com.vitalsigntracker.android.R;
-import com.vitalsigntracker.android.R.id;
-import com.vitalsigntracker.android.R.layout;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -30,22 +27,20 @@ public class ProviderRegister1 extends Activity {
 
 		providerId = (EditText) findViewById(R.id.uiprovideridField);
 		fName = (EditText) findViewById(R.id.uiproviderfirstnameField);
-		lName = (EditText) findViewById(R.id.uiproviderlastnameField);						
+		lName = (EditText) findViewById(R.id.uiproviderlastnameField);
 	}
 
 	public void nextButtonOnClick(View v) {
-						 
+
 		mySharedPreferences = this.getSharedPreferences(MY_PREFS, MODE_PRIVATE);
 		SharedPreferences.Editor editor = mySharedPreferences.edit();
 		editor.putString("pid", providerId.getText().toString());
 		editor.putString("f_name", fName.getText().toString());
 		editor.putString("l_name", lName.getText().toString());
 		editor.commit();
-
-		String provider_Id = mySharedPreferences.getString("pid", "");
-		String f_Name = mySharedPreferences.getString("f_name", "");
-		String l_Name = mySharedPreferences.getString("l_name", "");
-	
+		// String provider_Id = mySharedPreferences.getString("pid", "");
+		// String f_Name = mySharedPreferences.getString("f_name", "");
+		// String l_Name = mySharedPreferences.getString("l_name", "");
 		Intent i = new Intent(this, ProviderRegister2.class);
 		startActivity(i);
 	}
@@ -54,7 +49,5 @@ public class ProviderRegister1 extends Activity {
 		providerId.setText("");
 		fName.setText("");
 		lName.setText("");
-
 	}
-
 }

@@ -50,8 +50,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_below="@+id/tablePeriodSpinner"        
-    >
-    
+    >    
         <Button 
             android:id="@+id/submitButton"
             android:layout_width="100dp"
@@ -60,7 +59,5 @@
             android:onClick="submitDisplayTableOnClick"
             android:text="@string/submitButton"
         />
-    </RelativeLayout>
-    
-      
+    </RelativeLayout>  
 </RelativeLayout>

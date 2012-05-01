@@ -19,7 +19,7 @@ public class ProviderRegister2 extends Activity {
 	private EditText phoneNumber;
 	private EditText password;
 	private String providerId, fName, lName;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -28,13 +28,14 @@ public class ProviderRegister2 extends Activity {
 
 		email = (EditText) findViewById(R.id.uiemailField);
 		phoneNumber = (EditText) findViewById(R.id.uiphoneField);
-		password = (EditText) findViewById(R.id.uiproviderpasswordField);				
-				
-		SharedPreferences mySharedPreferences = this.getSharedPreferences("MY_PREFS", MODE_PRIVATE);
+		password = (EditText) findViewById(R.id.uiproviderpasswordField);
+
+		SharedPreferences mySharedPreferences = this.getSharedPreferences(
+				"MY_PREFS", MODE_PRIVATE);
 
 		providerId = mySharedPreferences.getString("pid", "");
 		fName = mySharedPreferences.getString("f_name", "");
-		lName = mySharedPreferences.getString("l_name", "");		
+		lName = mySharedPreferences.getString("l_name", "");
 	}
 
 	public void uiResetClick(View v) {
@@ -43,21 +44,20 @@ public class ProviderRegister2 extends Activity {
 		password.setText("");
 	}
 
-	public void uiSubmitClick(View v) throws JSONException {	
+	public void uiSubmitClick(View v) throws JSONException {
 
 		String json = prepareJSONString();
-    	String response = ConnectionManager.connect(json);    	
-    	boolean success = false;    	       
+		String response = ConnectionManager.connect(json);
+		boolean success = false;
 		JSONObject obj = new JSONObject(response);
-		success = obj.getBoolean("status");	
-		
+		success = obj.getBoolean("status");
+
 		if (success) {
 			Intent j = new Intent(this, ProviderLogin.class);
 			startActivity(j);
 		} else {
 
-			AlertDialog alertDialog = new AlertDialog.Builder(this)
-					.create();
+			AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 			alertDialog.setTitle("Registration Failed");
 			alertDialog.setMessage("Provider ID has been used.");
 			alertDialog.setButton("Continue",
@@ -67,12 +67,12 @@ public class ProviderRegister2 extends Activity {
 						}
 					});
 			alertDialog.show();
-		}		
+		}
 	}
 
 	public String prepareJSONString() {
 		String str = null;
-		
+
 		try {
 			JSONObject object = new JSONObject();
 			object.put("code", "providerRegister");

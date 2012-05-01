@@ -91,7 +91,5 @@
         android:layout_toRightOf="@+id/okButton"        
         android:onClick="resetClick"
         android:text="@string/resetButton" />
-    </RelativeLayout>
-    
+    </RelativeLayout>    
  </RelativeLayout>
-
