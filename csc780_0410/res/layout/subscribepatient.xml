@@ -75,7 +75,7 @@
         android:layout_width="fill_parent"
         android:textSize="12dp"        
         android:layout_below="@+id/uiphone"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="20dp"
         android:hint="@string/phoneHint"
         android:inputType="phone" />
     
@@ -83,7 +83,7 @@
         android:id="@+id/buttonsArea"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/sphoneField"
         android:gravity="center_horizontal">
     	<Button
         	android:id="@+id/uiOKButton"

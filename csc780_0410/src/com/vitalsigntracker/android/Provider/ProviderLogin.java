@@ -1,5 +1,7 @@
 package com.vitalsigntracker.android.Provider;
 
+import metadata.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.vitalsigntracker.android.*;
@@ -43,11 +45,9 @@ public class ProviderLogin extends Activity {
 	// 3. else, pop up dialog error message.
 	public void okLoginClick(View v) throws JSONException {
 		String json = prepareJSONString();
-		String response = ConnectionManager.connect(json);
-		boolean success = false;
-
+		String response = ConnectionManager.connect(json);		
 		JSONObject obj = new JSONObject(response);
-		success = obj.getBoolean("status");
+		boolean success = obj.getBoolean("status");
 
 		if (success) {
 
@@ -105,7 +105,7 @@ public class ProviderLogin extends Activity {
 
 		try {
 			JSONObject object = new JSONObject();
-			object.put("code", "providerlogin");
+			object.put("code", Constants.PROVIDER_LOGIN);
 			object.put("providerid", username.getText());
 			object.put("password", password.getText());
 			str = object.toString();

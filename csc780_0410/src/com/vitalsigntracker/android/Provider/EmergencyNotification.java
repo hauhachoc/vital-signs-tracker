@@ -18,6 +18,7 @@ import android.widget.TextView;
 public class EmergencyNotification extends MapActivity {
 
 	private TextView textName, textAdd1, textAdd2, textMessage;
+	private TextView textNameField, textAdd1Field, textAdd2Field, textMessageField;
 	private MapView map_view;
 	private MapController controller;
 	private String MY_PREFS = "MY_PREFS";
@@ -33,6 +34,10 @@ public class EmergencyNotification extends MapActivity {
 		textAdd1 = (TextView) findViewById(R.id.textAdd1);
 		textAdd2 = (TextView) findViewById(R.id.textAdd2);
 		textMessage = (TextView) findViewById(R.id.textMessage);
+		textNameField = (TextView) findViewById(R.id.textNameField);
+		textAdd1Field = (TextView) findViewById(R.id.textAdd1Field);
+		textAdd2Field = (TextView) findViewById(R.id.textAdd2Field);
+		textMessageField = (TextView) findViewById(R.id.textMessageField);
 
 		map_view = (MapView) findViewById(R.id.map_view);
 		map_view.setBuiltInZoomControls(true);
@@ -67,10 +72,14 @@ public class EmergencyNotification extends MapActivity {
 		controller.setCenter(point);
 		controller.setZoom(14);
 
-		textName.setText("Name\t\t:" + patientname);
-		textAdd1.setText("Add.\t\t\t:" + streetName);
-		textAdd2.setText("City\t\t\t:" + city);
-		textMessage.setText("Message\t\t:" + message);
+		textName.setText("Name");
+		textNameField.setText(patientname);
+		textAdd1.setText("Add.");
+		textAdd1Field.setText(streetName);
+		textAdd2.setText("City");
+		textAdd2Field.setText(city);
+		textMessage.setText("Message");
+		textMessageField.setText(message);
 	}
 
 	@Override

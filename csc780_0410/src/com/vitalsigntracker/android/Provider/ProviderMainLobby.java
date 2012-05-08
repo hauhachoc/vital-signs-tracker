@@ -1,5 +1,7 @@
 package com.vitalsigntracker.android.Provider;
 
+import metadata.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -71,7 +73,7 @@ public class ProviderMainLobby extends Activity {
 
 		try {
 			JSONObject object = new JSONObject();
-			object.put("code", "providerlogout");
+			object.put("code", Constants.PROVIDER_LOGOUT);
 			str = object.toString();
 		} catch (Exception e) {
 			e.printStackTrace();

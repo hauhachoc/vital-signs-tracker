@@ -1,5 +1,7 @@
 package com.vitalsigntracker.android.Provider;
 
+import metadata.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -75,7 +77,7 @@ public class ProviderRegister2 extends Activity {
 
 		try {
 			JSONObject object = new JSONObject();
-			object.put("code", "providerRegister");
+			object.put("code", Constants.PROVIDER_REGISTER);
 			object.put("providerId", providerId);
 			object.put("fName", fName);
 			object.put("lName", lName);

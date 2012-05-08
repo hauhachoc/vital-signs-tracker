@@ -1,5 +1,7 @@
 package com.vitalsigntracker.android.Provider;
 
+import metadata.Constants;
+
 import org.json.*;
 import com.vitalsigntracker.android.*;
 
@@ -24,8 +26,10 @@ public class ProviderConnectionThread extends Service {
 	Handler handler = new Handler() {
 
 		public void handleMessage(Message msg) {
+			Log.v(LOG_TAG, "handleMessage called");
 			Bundle b = msg.getData();
 			String json = b.getString("json");
+			Log.v(LOG_TAG, "json = " + json);
 			JSONObject obj = null;
 			String code = null;
 			try {
@@ -79,11 +83,6 @@ public class ProviderConnectionThread extends Service {
 				launchIntent);
 		notification.defaults = Notification.DEFAULT_ALL;
 		nm.notify(999, notification);
-
-		/*
-		 * isProviderOnline = true; notifyingThread = new Thread(bgTask,
-		 * "CHECK EMERGENCY ALERT"); notifyingThread.start();
-		 */
 	}
 
 	@Override
@@ -106,7 +105,7 @@ public class ProviderConnectionThread extends Service {
 				String str = null;
 				JSONObject json = new JSONObject();
 				try {
-					json.put("code", "checkAlertMessage");
+					json.put("code", Constants.PROVIDER_CHECK_ALERT_MESSAGE);
 					str = json.toString();
 				} catch (JSONException e) {
 					e.printStackTrace();
@@ -128,8 +127,7 @@ public class ProviderConnectionThread extends Service {
 					Bundle b = new Bundle();
 					b.putString("json", response);
 					msg.setData(b);
-					handler.sendMessage(msg);
-					// isProviderOnline = false;
+					handler.sendMessage(msg);	
 				}
 			}
 		}

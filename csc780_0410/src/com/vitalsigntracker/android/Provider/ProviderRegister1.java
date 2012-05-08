@@ -38,9 +38,6 @@ public class ProviderRegister1 extends Activity {
 		editor.putString("f_name", fName.getText().toString());
 		editor.putString("l_name", lName.getText().toString());
 		editor.commit();
-		// String provider_Id = mySharedPreferences.getString("pid", "");
-		// String f_Name = mySharedPreferences.getString("f_name", "");
-		// String l_Name = mySharedPreferences.getString("l_name", "");
 		Intent i = new Intent(this, ProviderRegister2.class);
 		startActivity(i);
 	}

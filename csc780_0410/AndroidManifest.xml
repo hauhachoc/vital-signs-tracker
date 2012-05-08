@@ -86,7 +86,7 @@
         </activity>
         
         <activity 
-            android:name=".DisplayTable"
+            android:name=".Provider.DisplayTable"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">            
         </activity>
@@ -109,7 +109,7 @@
         </activity>                  
         
         <activity 
-            android:name=".PresentTable"
+            android:name=".Provider.PresentTable"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar">            
         </activity>

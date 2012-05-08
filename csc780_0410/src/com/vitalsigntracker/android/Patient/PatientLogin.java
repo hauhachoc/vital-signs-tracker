@@ -1,5 +1,7 @@
 package com.vitalsigntracker.android.Patient;
 
+import metadata.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.vitalsigntracker.android.*;
@@ -79,7 +81,7 @@ public class PatientLogin extends Activity {
 
 		try {
 			JSONObject object = new JSONObject();
-			object.put("code", "patientLogin");
+			object.put("code", Constants.PATIENT_LOGIN);
 			object.put("email", username.getText());
 			object.put("password", password.getText());
 			str = object.toString();

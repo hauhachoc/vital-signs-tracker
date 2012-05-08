@@ -3,6 +3,9 @@ package com.vitalsigntracker.android.Patient;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+
+import metadata.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.vitalsigntracker.android.*;
@@ -33,38 +36,40 @@ public class PatientMainLobby extends Activity {
 		setContentView(R.layout.patientmainlobby);
 	}
 
-	public void modifyDataOnClick(View v) {
-		// Toast.makeText(this, "click to edit user info",
-		// Toast.LENGTH_SHORT).show();
+	//Patient can modify his/her email, phone number, and password
+	public void modifyDataOnClick(View v) {		
 		Intent i = new Intent(this, PatientModifyInfo.class);
 		startActivity(i);
 	}
 
-	public void providerInfoOnClick(View v) {
-		// Toast.makeText(this, "click for provider info",
-		// Toast.LENGTH_SHORT).show();
+	//Patient can request the complete info. of the health care provider.
+	public void providerInfoOnClick(View v) {		
 		Intent i = new Intent(this, RequestProviderInfo.class);
 		startActivity(i);
 	}
-
+	
+	//Patient can enter the vital signs info. manually
 	public void enterManuallyOnClick(View v) {
-		// Toast.makeText(this, "click to enter manually",
-		// Toast.LENGTH_SHORT).show();
 		Intent i = new Intent(this, PatientEnterManually1.class);
 		startActivity(i);
 	}
 
+	//Patient can active the bluetooth to listen to bluetooth device.
 	public void bluetoothDeviceOnClick(View v) {
 		Toast.makeText(this, "click to listen to bluetooth device",
 				Toast.LENGTH_SHORT).show();
 
 	}
-
+	
+	//Patient can check the report (table) weekly or monthly.
+	//The response of this request is the table of vital signs info.
+	//(periodically).
 	public void displayReportOnClick(View v) {
 		Intent i = new Intent(this, PatientDisplayTable.class);
 		startActivity(i);
 	}
 
+	//Patient can activate emergency request if it needed.
 	public void emergencyRequestOnClick(View v) throws JSONException {
 		LocationManager lm = (LocationManager) this
 				.getSystemService(Context.LOCATION_SERVICE);
@@ -96,15 +101,14 @@ public class PatientMainLobby extends Activity {
 
 		String locProvider = lm.getBestProvider(criteria, true);
 		lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0,
-				listener);
-		// lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0,
-		// listener);
-
+				listener);		
 		Location curLocation = lm.getLastKnownLocation(locProvider);
 
+		//get latitude and longitude coordinates
 		double currentLatitude = curLocation.getLatitude();
 		double currentLongitude = curLocation.getLongitude();
 
+		//get the actual address from the latitude and longitude coordinates.
 		Geocoder mylocation = new Geocoder(getApplicationContext(),
 				Locale.getDefault());
 		List<Address> address = null;
@@ -120,8 +124,9 @@ public class PatientMainLobby extends Activity {
 		mySharedPreferences = this.getSharedPreferences(MY_PREFS, MODE_PRIVATE);
 		String str = null;
 
+		//Put data in JSON string.
 		JSONObject json = new JSONObject();
-		json.put("code", "patientemergencyrequest");
+		json.put("code", Constants.PATIENT_EMERGENCY_REQUEST);
 		json.put("latitude", currentLatitude);
 		json.put("longitude", currentLongitude);
 		json.put("streetName", add.getAddressLine(0));
@@ -131,23 +136,28 @@ public class PatientMainLobby extends Activity {
 		json.put("message", "Emergency Request!");
 		str = json.toString();
 
+		//send request to server.
 		String response = ConnectionManager.connect(str);
 		boolean success = false;
 
 		Log.v("PatientMainLobby", "response " + response);
 
+		//get response from server
 		JSONObject obj = new JSONObject(response);
 		success = obj.getBoolean("status");
-
+		
+		//Emergency request is sent to the doctor via server.
+		//Doctor is online.
 		if (success) {
 			// Health care provider is online.
 			Toast.makeText(this, "Emergency Request Submitted.",
 					Toast.LENGTH_LONG).show();
-
-		} else {
+		} 
+		//Emergency request is sent to the doctor via SMS.
+		//Doctor is offline.
+		else {
 			Toast.makeText(this, "Provider is offline.", Toast.LENGTH_LONG)
-					.show();
-			// Health care provider is offline.
+					.show();			
 			String drphone = "1" + obj.getString("drphone");
 			String msg = "Patient Name: "
 					+ mySharedPreferences.getString("patientname", "")

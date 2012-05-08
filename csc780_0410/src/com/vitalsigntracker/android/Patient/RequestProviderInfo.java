@@ -1,5 +1,7 @@
 package com.vitalsigntracker.android.Patient;
 
+import metadata.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.vitalsigntracker.android.*;
@@ -8,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
+//This class request health care provider information.
 public class RequestProviderInfo extends Activity {
 
 	private String MY_PREFS = "MY_PREFS";
@@ -24,10 +27,12 @@ public class RequestProviderInfo extends Activity {
 		dremail = (TextView) findViewById(R.id.emailField);
 		drphone = (TextView) findViewById(R.id.phoneField);
 
+		//send request to server.
 		String json = prepareJSONString();
 		String response = ConnectionManager.connect(json);
 		boolean success = false;
-
+		
+		//get response from server.
 		JSONObject obj = null;
 		try {
 			obj = new JSONObject(response);
@@ -57,7 +62,7 @@ public class RequestProviderInfo extends Activity {
 
 		try {
 			JSONObject object = new JSONObject();
-			object.put("code", "requestproviderinfo");
+			object.put("code", Constants.PATIENT_REQUEST_PROVIDER_INFO);
 			object.put("patientemail",
 					mySharedPreferences.getString("patientEmail", ""));
 			str = object.toString();

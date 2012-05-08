@@ -1,5 +1,7 @@
 package com.vitalsigntracker.android.Patient;
 
+import metadata.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -32,7 +34,7 @@ public class PatientDisplayTable extends Activity {
 		String json = null;
 		try {
 			JSONObject object = new JSONObject();
-			object.put("code", "patientDisplayTable");
+			object.put("code", Constants.PATIENT_DISPLAY_TABLE);
 			object.put("patientEmail", patientEmail);
 			json = object.toString();
 		} catch (Exception e) {

@@ -1,5 +1,7 @@
 package com.vitalsigntracker.android.Patient;
 
+import metadata.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -34,6 +36,7 @@ public class PatientEnterManually2 extends Activity {
 
 	public void submitButtonOnClick(View v) throws JSONException {
 
+		//information is not complete.
 		if ((systole.getText()).equals(null)
 				|| (diastole.getText()).equals(null)
 				|| (heartRate.getText()).equals(null)
@@ -49,7 +52,7 @@ public class PatientEnterManually2 extends Activity {
 			alertDialog.show();
 
 		} else {
-
+			//Information is complete. Data send to the server.
 			String json = prepareJSONString();
 			String response = ConnectionManager.connect(json);
 			boolean success = false;
@@ -71,7 +74,7 @@ public class PatientEnterManually2 extends Activity {
 
 		try {
 			JSONObject object = new JSONObject();
-			object.put("code", "patientEnterManually");
+			object.put("code", Constants.PATIENT_ENTER_MANUALLY);
 			object.put("patientname",
 					mySharedPreferences.getString("patientname", ""));
 			object.put("arm", mySharedPreferences.getString("arm", ""));

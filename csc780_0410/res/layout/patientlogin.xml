@@ -9,9 +9,9 @@
     android:layout_height="wrap_content"
     android:background="#90006400"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="20dp"    
     >
-
+    
     <TextView
         android:id="@+id/titleText"
         android:layout_width="fill_parent"
@@ -29,22 +29,22 @@
         android:shadowDy="1"
         android:shadowRadius="0.6"
         />
-    
+        
     <TextView
         android:id="@+id/username"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titleText"
         android:layout_marginBottom="2dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="10dp"        
         android:text="@string/username"
         android:textSize="14dp" />
     <EditText
         android:id="@+id/usernameField"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/username"
-        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/username"        
+        android:layout_marginBottom="15dp"        
         android:hint="@string/usernameHint" />
     <TextView
         android:id="@+id/password"
@@ -60,7 +60,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="15dp"        
         android:hint="@string/passwordHint"
         android:password="true" />
     <TextView
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/passwordField"
-        android:layout_marginLeft="4dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginBottom="20dp"
         android:clickable="true"
         android:onClick="clickForgetPassword"
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/passwordField"
-        android:layout_marginRight="4dp"
+        android:layout_marginRight="10dp"
         android:clickable="true"
         android:onClick="clickActivate"
         android:text="@string/activate" />

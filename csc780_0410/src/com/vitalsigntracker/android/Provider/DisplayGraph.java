@@ -1,5 +1,7 @@
 package com.vitalsigntracker.android.Provider;
 
+import metadata.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.vitalsigntracker.android.*;
@@ -17,8 +19,9 @@ import android.widget.Spinner;
 public class DisplayGraph extends Activity {
 
 	String[] names = null;
-	String[] period = { "Select Period", "1 week", "2 week" };
-	int[] periodInInt = { 0, 7, 14 };
+	String[] period = { "Select Period", "1 week", "2 week", "1 month",
+			"3 month", "1 year" };
+	int[] periodInInt = { 0, 7, 14, 30, 90, 365 };
 
 	String patientNameSelected = null;
 	int periodSelected = 0;
@@ -126,7 +129,7 @@ public class DisplayGraph extends Activity {
 			String str = null;
 			try {
 				JSONObject object = new JSONObject();
-				object.put("code", "displayChart");
+				object.put("code", Constants.PROVIDER_DISPLAY_CHART);
 				object.put("patientName", patientNameSelected);
 				object.put("period", periodSelected);
 				str = object.toString();

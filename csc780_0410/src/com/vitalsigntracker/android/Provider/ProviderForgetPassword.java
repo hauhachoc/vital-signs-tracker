@@ -1,5 +1,7 @@
 package com.vitalsigntracker.android.Provider;
 
+import metadata.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,7 +39,7 @@ public class ProviderForgetPassword extends Activity {
 		if (success) {
 			AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 			alertDialog.setTitle("Retrieve Password Success");
-			alertDialog.setMessage("Your password is " + response);
+			alertDialog.setMessage("Your password is " + obj.getString("password"));
 			alertDialog.setButton("Continue",
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface d, int i) {
@@ -72,7 +74,7 @@ public class ProviderForgetPassword extends Activity {
 
 		try {
 			JSONObject object = new JSONObject();
-			object.put("code", "providerForgetPassword");
+			object.put("code", Constants.PROVIDER_FORGET_PASSWORD);
 			object.put("firstname", fName.getText());
 			object.put("lastname", lName.getText());
 			str = object.toString();

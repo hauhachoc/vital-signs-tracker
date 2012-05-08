@@ -1,4 +1,4 @@
-package com.vitalsigntracker.android;
+package com.vitalsigntracker.android.Provider;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,6 +10,12 @@ import java.util.Scanner;
 import metadata.Constants;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.vitalsigntracker.android.ConnectionManager;
+import com.vitalsigntracker.android.R;
+import com.vitalsigntracker.android.R.id;
+import com.vitalsigntracker.android.R.layout;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -143,7 +149,7 @@ public class DisplayTable extends Activity {
 			String str = null;
 			try {
 				JSONObject object = new JSONObject();
-				object.put("code", "displayTable");
+				object.put("code", Constants.PROVIDER_DISPLAY_TABLE);
 				object.put("patientName", patientNameSelected);
 				object.put("period", periodSelected);
 				str = object.toString();
@@ -152,7 +158,7 @@ public class DisplayTable extends Activity {
 				e.printStackTrace();
 			}
 
-			try {
+			try {							
 				SocketAddress socketAddress = new InetSocketAddress(
 						Constants.IP_ADD, Constants.PORT);
 				Socket sock = new Socket();

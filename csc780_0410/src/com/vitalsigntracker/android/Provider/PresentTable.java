@@ -1,8 +1,10 @@
-package com.vitalsigntracker.android;
+package com.vitalsigntracker.android.Provider;
 
 import org.json.JSONObject;
 
-import com.vitalsigntracker.android.Provider.ProviderMainLobby;
+import com.vitalsigntracker.android.R;
+import com.vitalsigntracker.android.R.id;
+import com.vitalsigntracker.android.R.layout;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -1,5 +1,7 @@
 package com.vitalsigntracker.android.Provider;
 
+import metadata.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.vitalsigntracker.android.*;
@@ -47,7 +49,7 @@ public class SubscribePatient extends Activity {
 			String str = null;
 			try {
 				JSONObject object = new JSONObject();
-				object.put("code", "subscribePatient");
+				object.put("code", Constants.PROVIDER_SUBSCRIBE_PATIENT);
 				object.put("patientName", patientName.getText());
 				object.put("email", email.getText());
 				object.put("phone", phone.getText());
