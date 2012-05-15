@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/displayTablePage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#90006400"
+    android:padding="20dp"   
+    >
+    
+    <TextView 
+        android:id="@+id/patientNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/patientNameText"
+         />
+    
+    <Spinner
+        android:id="@+id/patientNameSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/patientNameText"
+        android:prompt="@string/patientNameText"       
+        android:layout_marginBottom="15dp"
+        >        
+    </Spinner>
+    
+    <TextView 
+        android:id="@+id/tablePeriodText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@+id/patientNameSpinner"
+        android:text="@string/tablePeriodText"
+         />
+    
+      <Spinner
+        android:id="@+id/tablePeriodSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:prompt="@string/tablePeriodText"
+        android:layout_below="@+id/tablePeriodText">        
+    </Spinner>
+    
+    <RelativeLayout 
+        android:id="@+id/buttonsArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/tablePeriodSpinner"        
+    >    
+        <Button 
+            android:id="@+id/submitButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="submitDisplayTableOnClick"
+            android:text="@string/submitButton"
+        />
+    </RelativeLayout>  
+</RelativeLayout>
