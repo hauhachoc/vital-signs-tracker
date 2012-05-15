@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#90006400"
+    >
+    
+    <TextView 
+        android:id="@+id/title1"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_marginBottom="20dp"
+    	android:gravity="center"
+    	android:textSize="28dp"
+        android:textStyle="bold"
+        android:textColor="#000000"                
+        android:shadowColor="#51CA95"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="0.6"
+    	android:text="Enter Data Manually (1/2)"/>
+
+    <TextView
+        android:id="@+id/subtitle1"
+        android:layout_below="@+id/title1"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_marginBottom="8dp"    	
+    	android:textSize="14dp"
+    	android:text="1. Side:"    	    
+    	/>
+    
+    <RadioGroup 
+        android:id="@+id/radioSide"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@+id/subtitle1"
+    	android:paddingLeft="20dp"
+        >
+        <RadioButton 
+            android:id="@+id/leftArm"
+            android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:text="Left Arm"    		    		
+            />
+        <RadioButton 
+            android:id="@+id/rightArm"
+            android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:text="Right Arm"
+            />        
+    </RadioGroup>
+    
+    <TextView 
+        android:id="@+id/subTitle2"
+        android:layout_below="@+id/radioSide"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginBottom="8dp"    	
+    	android:textSize="14dp"
+    	android:text="2. Position:"
+        />
+    
+    <RadioGroup 
+        android:id="@+id/radioPosition"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@+id/subTitle2"
+    	android:paddingLeft="20dp"
+    	android:layout_marginBottom="20dp"
+        >
+        <RadioButton 
+            android:id="@+id/sitting"
+            android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:text="Sitting"    		    		
+            />
+        <RadioButton 
+            android:id="@+id/laying"
+            android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:text="Lying"
+            />        
+        <RadioButton 
+            android:id="@+id/standing"
+            android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:text="Standing"
+            />      
+    </RadioGroup>
+    
+    <Button 
+        android:id="@+id/nextButton"
+        android:layout_width="100dp" 
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_centerInParent="true"        
+        android:gravity="center" 
+        android:layout_below="@+id/radioPosition"
+        android:onClick="nextButtonOnClick"
+        />
+    
+</RelativeLayout>
