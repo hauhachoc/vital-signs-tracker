@@ -27,17 +27,23 @@ PATIENT
   - send emergency request to the doctor via server.
   - send emergency request using text messaging (SMS).
   - retrieve health care provider information.
-  - display his/her vital signs report (table). data will be feeded by server.
+  - display his/her vital signs report (table). data will be fed by server.
   - sign-out.
 
 * Patient can enter the vital signs information manually. There are two classes
   that take care this features: PatientEnterManually1.java and PatientEnterManually2.java.
   The reason we provide this feature are:
-  - the blue-tooth device can only give the heart-rate measurement (systole and
-    diastole); however, the vital signs information consists of heart-rate, body temp.,
+  - the blue-tooth device can only give the heart-rate measurement 
+    however, the vital signs information consists of heart-rate, body temp.,
     and blood pressure.
   - the application does not depend on the blue-tooth device that read the heart-rate
     measurement. 
+  - The bluetooth heart rate is read from an external heart rate monitor from Zephyr Hxm BT.
+    This is handled in the class BlueToothData.java which in turn uses the NewConnectedListener.java
+    class. This class handles the processing of the input packets from the HxM and is responsible for 
+    creating objects that parse the input data stream and other objects and methods that display the 
+    data on the phone screen. 
+      
   
   Once the patient enter the vital signs measurement, he/she has to submit it to 
   the server in order to be stored in the remote server. Once the information 
@@ -78,8 +84,8 @@ PROVIDER
 
 * Health care provider can retrieve the patients' vital signs data that are stored in server.
   Provider can choose the patient and the length of the report from the drop-down menu 
-  (spinner). The patient's names are feeded from the server, they are not hard-coded. 
-  Anytime the doctor adds a new patient to the system, the spinner will display the last
+  (spinner). The patient's names are fed from the server, they are not hard-coded. 
+  Any time the doctor adds a new patient to the system, the spinner will display the last
   up-to-date patients' names list.
 
 * Health care provider also can view the patients' vital signs report in line chart. The line

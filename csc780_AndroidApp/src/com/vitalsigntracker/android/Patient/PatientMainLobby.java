@@ -64,8 +64,10 @@ public class PatientMainLobby extends Activity {
 
 	//Patient can active the bluetooth to listen to bluetooth device.
 	public void bluetoothDeviceOnClick(View v) {
-		Toast.makeText(this, "click to listen to bluetooth device",
-				Toast.LENGTH_SHORT).show();
+		/*Toast.makeText(this, "click to listen to bluetooth device",
+				Toast.LENGTH_SHORT).show();*/
+		Intent i = new Intent(this,BlueToothData.class);
+		startActivity(i);
 
 	}
 	
