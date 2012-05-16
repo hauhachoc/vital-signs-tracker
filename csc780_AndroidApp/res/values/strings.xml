@@ -108,6 +108,8 @@
     <string name="doctorNameHint">Enter Your Doctor\'s Last Name</string>
     <string name="submitButton">Submit</string>
     
+    <!-- Strings for BluetoothData.java -->
+    <string name="bluetoothhr">Bluetooth Heart Rate</string>
     
 </resources>
 
