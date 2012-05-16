@@ -115,6 +115,11 @@ PROVIDER
   connection is ProviderMainLobby.java with the 'signOutOnClick()' method.
   
  
+* Accelerometer study project generates data for decision making by recording sensor values and sending
+an email to gmail as my SD card had issues with permissions
+
+* Weka study project is an attempt to understand machine learning algorithms to apply for motion
+detection
 
 
 
