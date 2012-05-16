@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, AccelerometerStudyActivity!</string>
+    <string name="app_name">AccelerometerStudy</string>
+    <string name="start_test">Go!</string>
+    <string name="stop_test">Done</string>
+
+</resources>

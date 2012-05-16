@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:padding="20dp"
+    android:background="#90006400">
+
+    <TextView
+        android:id="@+id/BluetoothHeartRate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bluetoothhr"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/labelHeartRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Welcometext"
+        android:layout_marginTop="19dp"
+        android:text="000" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/ButtonConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/labelHeartRate"
+        android:text="Connect" />
+
+    <TextView
+        android:id="@+id/HRTextBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelHeartRate"
+        android:layout_alignBottom="@+id/labelHeartRate"
+        android:layout_alignParentLeft="true"
+        android:text="Heart Rate"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/ButtonDisconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ButtonConnect"
+        android:layout_alignBottom="@+id/ButtonConnect"
+        android:layout_toRightOf="@+id/ButtonConnect"
+        android:text="Disconnect" />
+
+    <TextView
+        android:id="@+id/StatusTextBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ButtonConnect"
+        android:text="Status Message"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/labelStatusMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/StatusTextBox"
+        android:text="Status Message Box" />
+
+</RelativeLayout>
