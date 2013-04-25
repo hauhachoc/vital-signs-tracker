@@ -4,8 +4,6 @@
  * Once the doctor successfully create an account,
  * he/she can use this application in order to
  * subscribe his/her patient to the system.
- * @author 	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012)
  */
 package com.vitalsigntracker.android.Provider;
 import metadata.Constants;

@@ -11,8 +11,6 @@
  * then it will trigger an android notification on the top of menu bar.
  * The PendingIntent object will be called once the doctor click the
  * message on the notification bar to check the emergency request.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012)
  */
 package com.vitalsigntracker.android.Provider;
 import metadata.Constants;

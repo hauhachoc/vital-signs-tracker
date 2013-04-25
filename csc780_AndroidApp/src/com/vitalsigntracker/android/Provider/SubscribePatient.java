@@ -3,8 +3,6 @@
  * provider (doctor) to subscribe a new patient to the
  * system. The new patient's info. will be sent and 
  * stored in the server.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012)
  */
 package com.vitalsigntracker.android.Provider;
 import metadata.Constants;

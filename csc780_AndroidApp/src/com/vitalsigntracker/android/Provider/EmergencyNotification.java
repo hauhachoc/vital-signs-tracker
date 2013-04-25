@@ -2,8 +2,6 @@
  * patient and also google map (location of the patient).
  * The top half displays the map, and the bottom half displays
  * the message (name, address, and emergency message).
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012) 
  */
 package com.vitalsigntracker.android.Provider;
 import java.util.List;

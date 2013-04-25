@@ -1,8 +1,6 @@
 /* DisplayGraph provides UI for the doctor to select
  * the options of the line graph: patient and period
  * of the line graph.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012) 
  */
 package com.vitalsigntracker.android.Provider;
 import metadata.Constants;

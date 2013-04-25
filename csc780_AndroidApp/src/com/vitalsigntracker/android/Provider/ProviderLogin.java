@@ -6,8 +6,6 @@
  * If the doctor successfully sign-in to the system, this
  * class will also trigger the service to open a persistence
  * connection to server for the 'push notification'.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012) 
  */
 package com.vitalsigntracker.android.Provider;
 import metadata.Constants;

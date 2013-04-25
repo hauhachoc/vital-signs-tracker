@@ -3,8 +3,6 @@
  * the report.
  * Request will be sent to server to get the correct
  * data from database.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012)  
  */
 package com.vitalsigntracker.android.Provider;
 import org.json.JSONObject;

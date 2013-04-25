@@ -3,8 +3,6 @@
  * The line chart uses the open source line chart
  * library. (Please check package under:
  * com.vitalsignstracker.android.Graph).
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012) 
  */
 package com.vitalsigntracker.android.Provider;
 import org.json.JSONArray;
