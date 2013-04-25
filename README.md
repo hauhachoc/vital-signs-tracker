@@ -29,3 +29,51 @@ The benefits for patients:
 Get emergency help right away.
 Convenience.
 
+Design Architecture
+-------------------
+
+![Design Architecture](https://raw.github.com/jaykhopale/vital-signs-tracker/master/system_design.png)
+
+
+Explanation of Design Architecture
+----------------------------------
+
+* The client side (Android Application) consists of two different user interfaces; one user interface for the health-care provider and the other one for the patient.
+* The server side, that listen and respond to clients' requests, uses Java socket programming language.
+* The database, that stores all related information, uses PostgreSQL.
+
+
+How to Setup the System?
+------------------------
+
+* Download and setup the Java program (server code) on the server side. Set the port number that will be use for the listening port, eg. port 8080.
+* Create database and tables in PostgreSQL based on the Database schema below.
+* Download and install the client side application on any Android phones (minimum SDK: Android Google API 2.2).
+
+
+Database Schema
+---------------
+
+![Database Schema](https://raw.github.com/jaykhopale/vital-signs-tracker/master/db_schema.png) 
+
+
+Features of The Application (Version 1.0.0)
+-------------------------------------------
+
+### For Patient ###
+
+* Enter the vital signs data manually.
+* Enter the heart rate information using bluetooth device. Bluetooth device has to be purchased separately.
+* Upload vital signs data to the remote server (to be stored in the database).
+* View the vital signs record in table format.
+* Request emergency request manually.
+* Request emergency request based on motion.
+
+### For Health Care Provider/Doctor ###
+
+* Subscribe a patient to the remote monitoring system.
+* View the vital signs record of each patient in 'table' format.
+* View the vital signs record of each patient in 'chart' format.
+* Receive real time emergency request from the patient in Android notification bar (if the doctor is online) or in SMS format (if the doctor is offline).
+* The emergency notification also provides the patient's location in Google Maps and the detail address (text).
+
