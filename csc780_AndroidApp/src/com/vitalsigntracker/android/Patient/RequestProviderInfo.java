@@ -1,8 +1,6 @@
 /* RequestProviderInfo will retrieve the information
  * of the health care provider, such as phone number,
  * email, doctor's name, et cetera.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012) 
  */
 package com.vitalsigntracker.android.Patient;
 import metadata.Constants;

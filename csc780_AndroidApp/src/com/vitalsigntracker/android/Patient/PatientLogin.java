@@ -1,8 +1,6 @@
 /*
  * PatientLogin provides UI for a patient to sign-in
  * to the application.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012) 
  */
 package com.vitalsigntracker.android.Patient;
 import metadata.Constants;

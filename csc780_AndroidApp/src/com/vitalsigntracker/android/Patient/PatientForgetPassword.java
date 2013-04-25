@@ -3,8 +3,6 @@
  * wants to retrieve his/her password.
  * UI asks for some basic information, and verification
  * will be done on the server side.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012) 
  */
 package com.vitalsigntracker.android.Patient;
 import metadata.Constants;

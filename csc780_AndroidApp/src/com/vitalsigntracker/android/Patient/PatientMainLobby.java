@@ -4,8 +4,6 @@
  * alert, enter vital signs info. manually, display
  * table, see provider information, start the blue-tooth
  * listening, and sign-out.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012) 
  */
 package com.vitalsigntracker.android.Patient;
 import java.io.IOException;

@@ -1,8 +1,6 @@
 /*
  * PatientEnterMannually1 provides the UI for the
  * patient to enter his/her vital signs info. manually.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012) 
  */
 package com.vitalsigntracker.android.Patient;
 import com.vitalsigntracker.android.R;

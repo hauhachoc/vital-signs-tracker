@@ -3,8 +3,6 @@
  * wants to change his email account info.
  * New email account info will be sent to server, and
  * database will be updated.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012)
  */
 package com.vitalsigntracker.android.Patient;
 import metadata.Constants;

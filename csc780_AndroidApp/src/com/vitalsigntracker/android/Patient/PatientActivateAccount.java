@@ -2,8 +2,6 @@
  * PatientActivateAccount will be called when the patient
  * wants to activate his/her account for the first time 
  * after the doctor subscribe him/her to the system.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012)
  */
 package com.vitalsigntracker.android.Patient;
 import metadata.Constants;

@@ -4,8 +4,6 @@
  * Once the information are complete, the information
  * from PatientEnterManually1 class and this class
  * will be sent to the server.
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012) 
  */
 package com.vitalsigntracker.android.Patient;
 import metadata.Constants;
