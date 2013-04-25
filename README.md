@@ -1,4 +1,4 @@
-vital-signs-tracker
+Vital Signs Tracker
 ===================
 
 The Android application project for CSC 780 at San Francisco State University
