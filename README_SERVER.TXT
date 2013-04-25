@@ -1,7 +1,6 @@
-This text document provides short information about the server codes
+This text document provides short information about the server code
 of 'Vital Signs Tracker' application.
-Detail information about the design architecture can be found on:
-https://code.google.com/p/vital-signs-tracker/wiki/AppDesignDoc
+
 
 Note:
 ----------------

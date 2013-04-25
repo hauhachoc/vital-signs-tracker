@@ -1,7 +1,6 @@
 This text document provides short information about the "Vital Signs Tracker"
 Android application classes.
-Detail information about the design architecture can be found on:
-https://code.google.com/p/vital-signs-tracker/wiki/AppDesignDoc
+
 
 Note:
 * The central of this application is the "welcome.java". This class provides
