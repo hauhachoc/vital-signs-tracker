@@ -10,6 +10,6 @@ package jserver;
  */
 public class Constants {
 
-    public static final String IP_ADD = "192.168.0.187";
+    public static final String IP_ADD = "192.168.1.30";
     public static final int PORT = 8003;
 }
