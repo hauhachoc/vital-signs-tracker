@@ -1,15 +1,13 @@
 /*
  * This class stores all static information that are needed
  * for the ConnectionManager class.
- * author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012)
  */
 package metadata;
 
 public class Constants {
 
 	//Change this data based on your IP address.
-	public static final String IP_ADD = "192.168.0.187";
+	public static final String IP_ADD = "192.168.1.30";
 	//the opening port number.
 	public static final int PORT = 8003;
 	

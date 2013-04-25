@@ -1,10 +1,8 @@
-/* Welcome class is the main class of this application.
+/* Welcome class is the main activity of this application.
  * This class displays two options to the user to sign-in
  * to Vital Signs Tracker application: either as a health-
  * care provider (doctor) or a patient.
  * 
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012)
  */
 package com.vitalsigntracker.android;
 
@@ -53,8 +51,8 @@ public class Welcome extends Activity {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
-		Intent i = new Intent(this, Welcome.class);
-		startActivity(i);
+		//Intent i = new Intent(this, Welcome.class);
+		//startActivity(i);
 	}
 
 	/* 
@@ -62,12 +60,12 @@ public class Welcome extends Activity {
 	 * default Android menu button.
 	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
 	 */
-	@Override
+	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.options, menu);
 		return true;
-	}
+	}*/
 
 	/*
 	 * This method calls the right class when the user clicks

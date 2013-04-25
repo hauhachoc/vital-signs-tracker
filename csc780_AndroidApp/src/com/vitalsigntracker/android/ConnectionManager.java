@@ -2,8 +2,6 @@
  * connection (socket connection).
  * It opens the socket connection between client and server.
  * 
- * @author	Kelvin Komensen
- * @version	1.0.0 (CSC780 - SFSU Spring 2012) 
  */
 package com.vitalsigntracker.android;
 import java.io.InputStream;
